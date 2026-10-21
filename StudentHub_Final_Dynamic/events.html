@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Events</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+
+                <h2>🎓 StudentHub</h2>
+
+            </div>
+
+
+            <!-- Hamburger -->
+
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+                <a href="courses.html">Courses</a>
+
+                <a href="attendance.html">Attendance</a>
+
+                <a href="assignments.html">Assignments</a>
+
+                <a href="results.html">Results</a>
+
+                <a href="library.html">Library</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="profile.html">Profile</a>
+
+            </nav>
+
+
+            <!-- Theme -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            🎉 Campus Events
+        </h1>
+
+        <p>
+            Discover workshops, seminars, hackathons
+            and other campus activities.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= EVENT FILTER ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Find Events
+        </h2>
+
+
+        <div class="card">
+
+
+            <label for="eventSearch">
+                Search Event
+            </label>
+
+
+            <input
+                type="text"
+                id="eventSearch"
+                placeholder="Search by event name..."
+            >
+
+
+            <br>
+            <br>
+
+
+            <label for="eventCategory">
+                Category
+            </label>
+
+
+            <select id="eventCategory">
+
+                <option value="all">
+                    All Events
+                </option>
+
+                <option value="workshop">
+                    Workshop
+                </option>
+
+                <option value="seminar">
+                    Seminar
+                </option>
+
+                <option value="hackathon">
+                    Hackathon
+                </option>
+
+                <option value="cultural">
+                    Cultural
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EVENTS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Upcoming Events
+        </h2>
+
+
+        <div
+            class="grid"
+            id="eventGrid"
+        >
+
+
+            <!-- Event 1 -->
+
+            <div
+                class="card event-card"
+                data-title="AI and Machine Learning Workshop"
+                data-category="workshop"
+            >
+
+                <h3>
+                    🤖 AI & Machine Learning Workshop
+                </h3>
+
+                <p>
+                    Learn the fundamentals of Artificial
+                    Intelligence and Machine Learning.
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    10 September 2026
+                </p>
+
+                <p>
+                    <strong>Time:</strong>
+                    10:00 AM
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    Seminar Hall
+                </p>
+
+
+                <button
+                    class="event-register"
+                    data-event="AI & Machine Learning Workshop"
+                    type="button"
+                >
+                    Register
+                </button>
+
+            </div>
+
+
+
+            <!-- Event 2 -->
+
+            <div
+                class="card event-card"
+                data-title="Web Development Seminar"
+                data-category="seminar"
+            >
+
+                <h3>
+                    🌐 Web Development Seminar
+                </h3>
+
+                <p>
+                    Explore modern frontend and backend
+                    web development technologies.
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    14 September 2026
+                </p>
+
+                <p>
+                    <strong>Time:</strong>
+                    2:00 PM
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    Computer Lab
+                </p>
+
+
+                <button
+                    class="event-register"
+                    data-event="Web Development Seminar"
+                    type="button"
+                >
+                    Register
+                </button>
+
+            </div>
+
+
+
+            <!-- Event 3 -->
+
+            <div
+                class="card event-card"
+                data-title="University Hackathon"
+                data-category="hackathon"
+            >
+
+                <h3>
+                    💻 University Hackathon
+                </h3>
+
+                <p>
+                    Build innovative solutions and compete
+                    with students from different departments.
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    20 September 2026
+                </p>
+
+                <p>
+                    <strong>Time:</strong>
+                    9:00 AM
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    Innovation Lab
+                </p>
+
+
+                <button
+                    class="event-register"
+                    data-event="University Hackathon"
+                    type="button"
+                >
+                    Register
+                </button>
+
+            </div>
+
+
+
+            <!-- Event 4 -->
+
+            <div
+                class="card event-card"
+                data-title="Annual Cultural Festival"
+                data-category="cultural"
+            >
+
+                <h3>
+                    🎭 Annual Cultural Festival
+                </h3>
+
+                <p>
+                    Participate in cultural activities,
+                    competitions and performances.
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    25 September 2026
+                </p>
+
+                <p>
+                    <strong>Time:</strong>
+                    5:00 PM
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    University Ground
+                </p>
+
+
+                <button
+                    class="event-register"
+                    data-event="Annual Cultural Festival"
+                    type="button"
+                >
+                    Register
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- No Results -->
+
+        <p
+            id="noEvents"
+            style="display:none; text-align:center;"
+        >
+            No events found.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= REGISTERED EVENTS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            My Registered Events
+        </h2>
+
+
+        <table id="registeredEvents">
+
+            <tr>
+
+                <th>
+                    Event
+                </th>
+
+                <th>
+                    Status
+                </th>
+
+                <th>
+                    Action
+                </th>
+
+            </tr>
+
+
+            <tr id="noRegisteredEvents">
+
+                <td colspan="3" align="center">
+                    No events registered yet.
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ================= EVENT MODAL ================= -->
+
+    <div
+        class="modal"
+        id="eventModal"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                class="modal-close"
+                id="eventModalClose"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                🎉 Event Registration
+            </h2>
+
+
+            <br>
+
+
+            <p id="eventModalText">
+                Event information.
+            </p>
+
+
+            <br>
+
+
+            <button
+                id="eventModalDone"
+                type="button"
+            >
+                Done
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= MAIN JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- ================= EVENTS JAVASCRIPT ================= -->
+
+    <script>
+
+        /* =========================================
+           EVENT SEARCH + CATEGORY FILTER
+        ========================================= */
+
+        const eventSearch =
+            document.getElementById("eventSearch");
+
+        const eventCategory =
+            document.getElementById("eventCategory");
+
+        const eventCards =
+            document.querySelectorAll(".event-card");
+
+        const noEvents =
+            document.getElementById("noEvents");
+
+
+        function filterEvents() {
+
+            const searchText =
+                eventSearch.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const selectedCategory =
+                eventCategory.value;
+
+
+            let visibleEvents = 0;
+
+
+            eventCards.forEach(function(card) {
+
+                const title =
+                    card
+                        .getAttribute("data-title")
+                        .toLowerCase();
+
+
+                const category =
+                    card.getAttribute("data-category");
+
+
+                const matchesSearch =
+                    title.includes(searchText);
+
+
+                const matchesCategory =
+                    selectedCategory === "all" ||
+                    category === selectedCategory;
+
+
+                if (
+                    matchesSearch &&
+                    matchesCategory
+                ) {
+
+                    card.style.display = "";
+
+                    visibleEvents++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            if (visibleEvents === 0) {
+
+                noEvents.style.display = "block";
+
+            } else {
+
+                noEvents.style.display = "none";
+
+            }
+
+        }
+
+
+        eventSearch.addEventListener(
+            "input",
+            filterEvents
+        );
+
+
+        eventCategory.addEventListener(
+            "change",
+            filterEvents
+        );
+
+
+
+        /* =========================================
+           EVENT REGISTRATION
+        ========================================= */
+
+        const registerButtons =
+            document.querySelectorAll(".event-register");
+
+
+        const registeredEvents =
+            document.getElementById("registeredEvents");
+
+
+        const noRegisteredEvents =
+            document.getElementById(
+                "noRegisteredEvents"
+            );
+
+
+        const eventModal =
+            document.getElementById("eventModal");
+
+
+        const eventModalText =
+            document.getElementById("eventModalText");
+
+
+        const eventModalClose =
+            document.getElementById(
+                "eventModalClose"
+            );
+
+
+        const eventModalDone =
+            document.getElementById(
+                "eventModalDone"
+            );
+
+
+        registerButtons.forEach(function(button) {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    const eventName =
+                        button.getAttribute(
+                            "data-event"
+                        );
+
+
+                    /*
+                        Remove empty row
+                    */
+
+                    if (noRegisteredEvents) {
+
+                        noRegisteredEvents.remove();
+
+                    }
+
+
+                    /*
+                        Prevent duplicate registration
+                    */
+
+                    if (button.disabled) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                        Create table row
+                    */
+
+                    const row =
+                        document.createElement("tr");
+
+
+                    row.innerHTML =
+
+                        "<td>" +
+                        eventName +
+                        "</td>" +
+
+                        "<td>Registered ✅</td>" +
+
+                        "<td>" +
+
+                        "<button class='cancel-event' type='button'>" +
+                        "Cancel" +
+                        "</button>" +
+
+                        "</td>";
+
+
+                    registeredEvents.appendChild(row);
+
+
+                    /*
+                        Disable register button
+                    */
+
+                    button.disabled = true;
+
+                    button.textContent =
+                        "Registered";
+
+
+                    /*
+                        Notification
+                    */
+
+                    if (
+                        typeof showNotification ===
+                        "function"
+                    ) {
+
+                        showNotification(
+                            "You registered for " +
+                            eventName +
+                            ".",
+                            "success"
+                        );
+
+                    }
+
+
+                    /*
+                        Modal
+                    */
+
+                    eventModalText.textContent =
+                        "Registration successful for " +
+                        eventName +
+                        ".";
+
+
+                    eventModal.classList.add(
+                        "show"
+                    );
+
+
+                    /*
+                        Cancel registration
+                    */
+
+                    const cancelButton =
+                        row.querySelector(
+                            ".cancel-event"
+                        );
+
+
+                    cancelButton.addEventListener(
+                        "click",
+                        function() {
+
+                            row.remove();
+
+
+                            button.disabled =
+                                false;
+
+
+                            button.textContent =
+                                "Register";
+
+
+                            if (
+                                typeof showNotification ===
+                                "function"
+                            ) {
+
+                                showNotification(
+                                    "Registration cancelled for " +
+                                    eventName +
+                                    ".",
+                                    "warning"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+
+        /* =========================================
+           CLOSE MODAL
+        ========================================= */
+
+        function closeEventModal() {
+
+            eventModal.classList.remove(
+                "show"
+            );
+
+        }
+
+
+        eventModalClose.addEventListener(
+            "click",
+            closeEventModal
+        );
+
+
+        eventModalDone.addEventListener(
+            "click",
+            closeEventModal
+        );
+
+
+        eventModal.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    event.target === eventModal
+                ) {
+
+                    closeEventModal();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
