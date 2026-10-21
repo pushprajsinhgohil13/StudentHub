@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub Practicals 8-15 – Complete Reference Guide</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 13px;
+            color: #1e293b;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+        
+        /* ===== COVER PAGE ===== */
+        .cover {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 50%, #084298 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 3rem 2rem;
+            page-break-after: always;
+        }
+        .cover-logo { font-size: 64px; margin-bottom: 1rem; }
+        .cover h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .cover h2 { font-size: 1.2rem; font-weight: 400; opacity: 0.9; margin-bottom: 2rem; }
+        .cover-meta {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2.5rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        .cover-meta table { width: 100%; border-collapse: collapse; }
+        .cover-meta td { padding: 0.35rem 0.5rem; text-align: left; }
+        .cover-meta td:first-child { font-weight: 600; color: rgba(255,255,255,0.85); width: 140px; }
+        .cover-pills { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+        .pill { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #fff; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.82rem; font-weight: 600; }
+        
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            page-break-after: always;
+        }
+        .toc h2 { font-size: 1.8rem; color: #0d6efd; border-bottom: 3px solid #0d6efd; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.65rem 0;
+            border-bottom: 1px dotted #e2e8f0;
+        }
+        .toc-item a { text-decoration: none; color: #1e293b; }
+        .toc-item a:hover { color: #0d6efd; }
+        .toc-page { color: #94a3b8; font-size: 0.9rem; }
+        .toc-section { margin-top: 1rem; }
+        .toc-section-title { font-weight: 700; color: #0d6efd; margin-bottom: 0.5rem; font-size: 1rem; }
+        
+        /* ===== PRACTICAL SECTIONS ===== */
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            page-break-before: always;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            color: #fff;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .section-header .practical-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .section-header h2 { font-size: 1.4rem; margin: 0.3rem 0 0.2rem 0; }
+        .section-header p { opacity: 0.9; font-size: 0.9rem; margin: 0; }
+        
+        .objective-box {
+            background: #eff6ff;
+            border-left: 4px solid #0d6efd;
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .objective-box h3 { color: #0d6efd; margin-bottom: 0.35rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* File Map Table */
+        .file-map-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e293b;
+            margin: 1.5rem 0 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .file-map-title::before { content: '📁'; }
+        
+        table.file-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+        table.file-table th {
+            background: #f8fafc;
+            font-weight: 700;
+            color: #475569;
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        table.file-table td {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        table.file-table tr:hover { background: #f8fafc; }
+        
+        .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.72rem; font-weight: 700; }
+        .badge-php { background: #ede9fe; color: #5b21b6; }
+        .badge-sql { background: #e0f2fe; color: #0369a1; }
+        .badge-html { background: #fef3c7; color: #92400e; }
+        .badge-css { background: #fce7f3; color: #9d174d; }
+        .badge-json { background: #d1fae5; color: #065f46; }
+        .badge-htaccess { background: #fee2e2; color: #991b1b; }
+        .badge-core { background: #0d6efd; color: #fff; }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.82rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        .code-block .comment { color: #64748b; }
+        .code-block .keyword { color: #93c5fd; }
+        .code-block .string { color: #86efac; }
+        .code-block .fn { color: #fde68a; }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .feature-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+        }
+        .feature-card h4 { font-size: 0.85rem; color: #0d6efd; margin-bottom: 0.35rem; }
+        .feature-card ul { padding-left: 1.25rem; }
+        .feature-card li { font-size: 0.82rem; color: #475569; margin-bottom: 0.2rem; }
+        
+        .conclusion-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        .conclusion-box h3 { color: #60a5fa; margin-bottom: 0.75rem; font-size: 1.1rem; }
+        .conclusion-box p { opacity: 0.9; line-height: 1.8; }
+        
+        .credentials-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.88rem;
+        }
+        .credentials-box h4 { color: #92400e; margin-bottom: 0.5rem; }
+        .credentials-box code { background: #fef3c7; padding: 0.15rem 0.4rem; border-radius: 3px; font-family: monospace; }
+        
+        /* Full Master File Map */
+        .master-map {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            page-break-before: always;
+        }
+        
+        @media print {
+            .cover { page-break-after: always; }
+            .section { page-break-before: always; }
+            .master-map { page-break-before: always; }
+            .toc { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== COVER PAGE ===== -->
+<div class="cover">
+    <div class="cover-logo">🎓</div>
+    <h1>StudentHub Portal</h1>
+    <h2>Web Application Practicals 8 – 15<br>Complete Implementation Reference Guide</h2>
+    
+    <div class="cover-meta">
+        <table>
+            <tr>
+                <td>Subject</td>
+                <td>Web Application Development</td>
+            </tr>
+            <tr>
+                <td>Stack</td>
+                <td>PHP 8 + MySQL + HTML5 + CSS3</td>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>XAMPP (Apache + MySQL)</td>
+            </tr>
+            <tr>
+                <td>Database</td>
+                <td>studenthub</td>
+            </tr>
+            <tr>
+                <td>Root Path</td>
+                <td>htdocs/studenthub_practical7/</td>
+            </tr>
+            <tr>
+                <td>Practicals</td>
+                <td>8, 9, 10, 11, 12, 13, 14, 15</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="cover-pills">
+        <span class="pill">MySQL InnoDB</span>
+        <span class="pill">PDO Prepared Statements</span>
+        <span class="pill">MySQLi</span>
+        <span class="pill">RBAC</span>
+        <span class="pill">Session Security</span>
+        <span class="pill">CSRF Protection</span>
+        <span class="pill">AJAX / Fetch API</span>
+        <span class="pill">REST JSON API</span>
+        <span class="pill">File Upload Security</span>
+        <span class="pill">BCRYPT Password Hashing</span>
+    </div>
+</div>
+
+
+<!-- ===== TABLE OF CONTENTS ===== -->
+<div class="toc">
+    <h2>Table of Contents</h2>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Core Infrastructure</div>
+        <div class="toc-item"><a href="#prac8">Practical 8 – MySQL Schema Design, ER Model, PDO Connectivity</a><span class="toc-page">3</span></div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Authentication & Sessions</div>
+        <div class="toc-item"><a href="#prac9">Practical 9 – Secure User Registration, CSRF & Audit Logging</a><span class="toc-page">4</span></div>
+        <div class="toc-item"><a href="#prac10">Practical 10 – Secure Login, Sessions, RBAC, Remember-Me</a><span class="toc-page">5</span></div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">CRUD Management</div>
+        <div class="toc-item"><a href="#prac11">Practical 11 – Student Management CRUD, CSV Export, Soft Delete</a><span class="toc-page">6</span></div>
+        <div class="toc-item"><a href="#prac12">Practical 12 – Event Management, Poster Upload, File Validation</a><span class="toc-page">7</span></div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">API & Async</div>
+        <div class="toc-item"><a href="#prac13">Practical 13 – PHP JSON REST API & AJAX Fetch (Debounced)</a><span class="toc-page">8</span></div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Admin & Final</div>
+        <div class="toc-item"><a href="#prac14">Practical 14 – Admin Dashboard, RBAC, SQL Aggregations</a><span class="toc-page">9</span></div>
+        <div class="toc-item"><a href="#prac15">Practical 15 – Final Integration, Testing Suite, Diagnostics</a><span class="toc-page">10</span></div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Complete Reference</div>
+        <div class="toc-item"><a href="#mastermap">Master File Index – All Practicals</a><span class="toc-page">11</span></div>
+    </div>
+    
+    <div style="margin-top: 2rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+        <p style="color: #64748b; font-size: 0.85rem;">
+            <strong>Demo Credentials:</strong><br>
+            Admin Login → <code style="background:#e0f2fe; padding:0.1rem 0.3rem; border-radius:3px;">admin / Password@123</code><br>
+            Student Login → <code style="background:#e0f2fe; padding:0.1rem 0.3rem; border-radius:3px;">student1 / Password@123</code><br>
+            <strong>Project URL:</strong> <code style="background:#e0f2fe; padding:0.1rem 0.3rem; border-radius:3px;">http://localhost/studenthub_practical7/</code>
+        </p>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 8 ===== -->
+<div class="section" id="prac8">
+    <div class="section-header">
+        <span class="practical-badge">PRACTICAL 8</span>
+        <h2>MySQL Schema Design, ER Model &amp; PDO Database Connectivity</h2>
+        <p>Design normalized relational schema, implement ER diagram concepts, and connect via PHP PDO with prepared statements.</p>
+    </div>
+    
+    <div class="objective-box">
+        <h3>Learning Objective</h3>
+        <p>Design a normalized MySQL database for a student management system using InnoDB engine. Implement a full relational schema with foreign keys, indexes, and seed data. Use PHP PDO (PHP Data Objects) with parameterized queries to safely read and write student and event records.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 8</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 8</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>studenthub.sql</strong></td>
+                <td><span class="badge badge-sql">SQL</span></td>
+                <td>Unified schema: 5 tables (users, students, events, event_registrations, audit_logs), 1 VIEW, 1 Stored Procedure, 25+ seed records. Run this first in phpMyAdmin.</td>
+            </tr>
+            <tr>
+                <td><strong>db.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Database connector with dual driver support (PDO + MySQLi). Includes auto-port fallback (3306/3307) and auto-database creation from SQL file. Call <code>get_db_connection()</code> for PDO.</td>
+            </tr>
+            <tr>
+                <td><strong>view_students.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Displays all student records fetched via PDO prepared statements. Includes live search with LIKE parameterized query and course statistics summary.</td>
+            </tr>
+            <tr>
+                <td><strong>view_events.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Lists campus events from MySQL. Supports event registration with duplicate detection and PDO transactions. Demonstrates M:N relationship insert.</td>
+            </tr>
+            <tr>
+                <td><strong>practical8/schema_info.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>ER diagram viewer. Shows all tables, column definitions, foreign key relationships, and indexes fetched dynamically from INFORMATION_SCHEMA.</td>
+            </tr>
+            <tr>
+                <td><strong>practical8/index.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Practical 8 navigation hub. Shows connection status, table row counts, and links to all Practical 8 demonstrations.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>🗄️ Database Tables (5)</h4>
+            <ul>
+                <li><strong>users</strong> – auth accounts, RBAC roles</li>
+                <li><strong>students</strong> – enrollment records</li>
+                <li><strong>events</strong> – campus event listings</li>
+                <li><strong>event_registrations</strong> – M:N junction</li>
+                <li><strong>audit_logs</strong> – security telemetry</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🔗 Schema Features</h4>
+            <ul>
+                <li>InnoDB engine with FK constraints</li>
+                <li>CHECK constraints (semester 1-8)</li>
+                <li>ENUM columns (role, status, category)</li>
+                <li>VIEW: v_registrations</li>
+                <li>Stored Procedure: GetStudentRegistrations</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>💡 PDO Key Concepts</h4>
+            <ul>
+                <li>PDO::ERRMODE_EXCEPTION enabled</li>
+                <li>FETCH_ASSOC as default mode</li>
+                <li>Emulated prepares disabled</li>
+                <li>Named placeholders (:param)</li>
+                <li>Positional placeholders (?)</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📊 Seed Data Included</h4>
+            <ul>
+                <li>2 user accounts (admin + student)</li>
+                <li>20+ student records across courses</li>
+                <li>5+ campus events with dates</li>
+                <li>Event registrations (M:N links)</li>
+                <li>Sample audit log entries</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="credentials-box">
+        <h4>🔑 Database Connection – db.php Key Function</h4>
+        <p>For Practical 8 (PDO): <code>require_once 'db.php'; require_db_connection();</code> then use <code>$pdo</code> global.<br>
+        For Practical 9-14 (MySQLi): <code>$conn = get_mysqli();</code> returns active MySQLi connection handle.</p>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 9 ===== -->
+<div class="section" id="prac9">
+    <div class="section-header" style="background: linear-gradient(135deg, #198754 0%, #0f5132 100%);">
+        <span class="practical-badge">PRACTICAL 9</span>
+        <h2>Secure User Registration, Duplicate Checks, CSRF &amp; Audit Logging</h2>
+        <p>Build a PHP registration system with input sanitization, password_hash(), CSRF tokens, and database audit trails.</p>
+    </div>
+    
+    <div class="objective-box" style="background: #f0fdf4; border-color: #198754;">
+        <h3>Learning Objective</h3>
+        <p>Implement a secure user registration system that enforces server-side validation, checks for duplicate username/email, hashes passwords with BCRYPT using PHP's <code>password_hash()</code>, generates CSRF protection tokens, and logs all signup attempts to the audit_logs table.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 9</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 9</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>practical9/register.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Complete secure registration form with CSRF token, duplicate email/username detection, password_hash(PASSWORD_BCRYPT, 10), server validation, and REGISTER_SUCCESS audit event.</td>
+            </tr>
+            <tr>
+                <td><strong>db.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Provides <code>get_csrf_token()</code>, <code>verify_csrf_token()</code>, and <code>log_audit_action()</code> used throughout registration flow.</td>
+            </tr>
+            <tr>
+                <td><strong>audit_logs (table)</strong></td>
+                <td><span class="badge badge-sql">SQL</span></td>
+                <td>Receives INSERT for every registration attempt (REGISTER_SUCCESS, REGISTER_BLOCKED_DUPLICATE). Stores user_id, username, action, IP address, user_agent, timestamp.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>🔐 Password Security</h4>
+            <ul>
+                <li>BCRYPT with cost factor 10</li>
+                <li>password_hash() PHP built-in</li>
+                <li>VARCHAR(255) hash storage</li>
+                <li>password_verify() for login check</li>
+                <li>No plaintext ever stored</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🛡️ CSRF Protection</h4>
+            <ul>
+                <li>Token generated via random_bytes(32)</li>
+                <li>Stored in $_SESSION['csrf_token']</li>
+                <li>Verified using hash_equals()</li>
+                <li>Timing-safe comparison (no timing attacks)</li>
+                <li>Form hidden field injection</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>✅ Validation Checks</h4>
+            <ul>
+                <li>Email: filter_var FILTER_VALIDATE_EMAIL</li>
+                <li>Phone: preg_match 10-digit regex</li>
+                <li>Password strength: 8+ chars</li>
+                <li>Duplicate email check (DB)</li>
+                <li>Duplicate username check (DB)</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📋 Audit Log Events</h4>
+            <ul>
+                <li>REGISTER_SUCCESS – new user created</li>
+                <li>REGISTER_BLOCKED_DUPLICATE – email/user taken</li>
+                <li>LOGIN_BLOCKED_INACTIVE – disabled account</li>
+                <li>Stores IP address + User Agent</li>
+                <li>Linked to user_id (or NULL if pre-reg)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 10 ===== -->
+<div class="section" id="prac10">
+    <div class="section-header" style="background: linear-gradient(135deg, #6f42c1 0%, #432874 100%);">
+        <span class="practical-badge">PRACTICAL 10</span>
+        <h2>Secure Login with Sessions, RBAC, Idle Timeout &amp; Remember-Me</h2>
+        <p>Implement PHP session authentication with automatic timeout, role-based redirects, and persistent remember-me cookie.</p>
+    </div>
+    
+    <div class="objective-box" style="background: #f5f3ff; border-color: #6f42c1;">
+        <h3>Learning Objective</h3>
+        <p>Build a stateful authentication system using PHP sessions. Implement role-based access control (RBAC) to separate admin and student areas. Enforce idle session expiry at 15 minutes. Provide remember-me functionality with a database-stored hashed token and secure HttpOnly cookie.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 10</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 10</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>login.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Main authentication endpoint. Queries users table by username OR email, verifies BCRYPT hash, regenerates session ID (prevents session fixation), sets session vars, redirects by role. Shows timeout/logout messages via ?msg= query.</td>
+            </tr>
+            <tr>
+                <td><strong>logout.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Destroys session, clears remember_me cookie, nullifies remember_token in DB, logs LOGOUT audit event, redirects to login.php?msg=logged_out.</td>
+            </tr>
+            <tr>
+                <td><strong>student_dashboard.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Protected student area. Calls require_login() at top. Displays registration stats, profile, registered events (joined from DB), upcoming campus events. Demonstrates session data display.</td>
+            </tr>
+            <tr>
+                <td><strong>admin_dashboard.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Protected admin-only area. Calls require_role('admin') which enforces strict RBAC. Redirects non-admin users to login with ?error=forbidden.</td>
+            </tr>
+            <tr>
+                <td><strong>db.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Core auth helpers: start_secure_session(), destroy_secure_session(), require_login(), require_role(), set_remember_cookie(), verify_remember_cookie().</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>⏱️ Session Timeout (15 min)</h4>
+            <ul>
+                <li>Checked on every page load</li>
+                <li>$_SESSION['LAST_ACTIVITY'] timestamp</li>
+                <li>900 seconds inactivity = auto logout</li>
+                <li>Redirects to login.php?msg=timeout</li>
+                <li>Audit log event: SESSION_TIMEOUT</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🔐 Session Security</h4>
+            <ul>
+                <li>session_regenerate_id(true) on login</li>
+                <li>cookie_httponly = 1 (no JS access)</li>
+                <li>use_only_cookies = 1 (no URL sessions)</li>
+                <li>$_SESSION fully cleared on logout</li>
+                <li>Session cookie deleted on logout</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🗝️ Remember-Me Token</h4>
+            <ul>
+                <li>64 bytes random token (bin2hex)</li>
+                <li>SHA-256 hashed before DB storage</li>
+                <li>Cookie: userId:rawToken (30 days)</li>
+                <li>DB: users.remember_token = hash</li>
+                <li>hash_equals() for timing-safe verify</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>👮 RBAC Redirects</h4>
+            <ul>
+                <li>Admin → admin_dashboard.php</li>
+                <li>Student → student_dashboard.php</li>
+                <li>Unauthorized → ?error=unauthorized</li>
+                <li>Wrong role → ?error=forbidden</li>
+                <li>Role stored in $_SESSION['role']</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 11 ===== -->
+<div class="section" id="prac11">
+    <div class="section-header" style="background: linear-gradient(135deg, #fd7e14 0%, #c05a0a 100%);">
+        <span class="practical-badge">PRACTICAL 11</span>
+        <h2>Student Management CRUD with Search, Filter, CSV Export &amp; Soft Delete</h2>
+        <p>Full Create-Read-Update-Delete operations on student records using MySQLi prepared statements.</p>
+    </div>
+    
+    <div class="objective-box" style="background: #fff7ed; border-color: #fd7e14;">
+        <h3>Learning Objective</h3>
+        <p>Implement a complete CRUD management system for student records. Add search, course filter, and status filter functionality using dynamic parameterized queries. Export filtered records to CSV (UTF-8 with BOM). Implement soft delete pattern (status = 'deleted') with restore capability.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 11</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 11</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>students_crud.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Full CRUD: Modal-based Add/Edit/Delete forms. Dynamic filter query builder. Soft Delete sets status='deleted'. Restore sets status='active'. CSRF-protected POST handler. Each action logs to audit_logs.</td>
+            </tr>
+            <tr>
+                <td><strong>export_students_csv.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Intermediate extension: Streams a CSV download with UTF-8 BOM (Excel compatible). Exports: ID, Name, Email, Phone, Course, Semester, Status, Created Date. Logs EXPORT_CSV audit event.</td>
+            </tr>
+            <tr>
+                <td><strong>students (table)</strong></td>
+                <td><span class="badge badge-sql">SQL</span></td>
+                <td>Target table. Status ENUM: 'active', 'inactive', 'deleted'. Soft delete uses UPDATE SET status='deleted' instead of hard DELETE. Unique constraint on email.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>🔍 Search &amp; Filter</h4>
+            <ul>
+                <li>Live search: name, email, phone LIKE ?</li>
+                <li>Dropdown: filter by course</li>
+                <li>Status filter: Active / All / Deleted</li>
+                <li>Dynamic query builder with bind_param</li>
+                <li>URL parameter persistence</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📤 CSV Export (Intermediate)</h4>
+            <ul>
+                <li>Content-Type: text/csv</li>
+                <li>Content-Disposition: attachment</li>
+                <li>UTF-8 BOM for Excel compatibility</li>
+                <li>fputcsv() for safe quoting</li>
+                <li>Filename with timestamp</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🗑️ Soft Delete (Advanced)</h4>
+            <ul>
+                <li>No hard DELETE from database</li>
+                <li>UPDATE SET status='deleted'</li>
+                <li>Deleted records hidden by default</li>
+                <li>Restore button in 'deleted' filter view</li>
+                <li>Audit logged: STUDENT_SOFT_DELETED</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📝 Form Actions</h4>
+            <ul>
+                <li>Add: INSERT with email duplicate check</li>
+                <li>Edit: UPDATE with cross-email check</li>
+                <li>Soft Delete: status → 'deleted'</li>
+                <li>Restore: status → 'active'</li>
+                <li>All via CSRF-verified POST forms</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 12 ===== -->
+<div class="section" id="prac12">
+    <div class="section-header" style="background: linear-gradient(135deg, #dc3545 0%, #842029 100%);">
+        <span class="practical-badge">PRACTICAL 12</span>
+        <h2>Event Management CRUD, Poster Upload, MIME Validation &amp; .htaccess Security</h2>
+        <p>Admin-facing event management with secure image upload handling and directory protection.</p>
+    </div>
+    
+    <div class="objective-box" style="background: #fff5f5; border-color: #dc3545;">
+        <h3>Learning Objective</h3>
+        <p>Build a full event management CRUD system with poster image upload. Validate uploaded files by MIME type (using PHP finfo) and file size (max 2MB). Rename files with cryptographically random names (bin2hex + timestamp) to prevent path traversal attacks. Protect the uploads directory with .htaccess to block direct script execution.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 12</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 12</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>events_crud.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Event CRUD with Create/Update/Delete handlers. Calls handle_poster_upload() on form submit. Displays event grid with poster thumbnails, category badges, and status indicators. Search and filter bar for category/status/keyword.</td>
+            </tr>
+            <tr>
+                <td><strong>uploads/posters/</strong></td>
+                <td><span class="badge badge-html">DIR</span></td>
+                <td>Secure upload directory. All uploaded poster images saved here. Files are renamed to: event_[16-char-hex]_[timestamp].[ext] format. Directory listing disabled.</td>
+            </tr>
+            <tr>
+                <td><strong>uploads/posters/.htaccess</strong></td>
+                <td><span class="badge badge-htaccess">.htaccess</span></td>
+                <td>Blocks direct execution of PHP, Python, CGI, JavaScript, and other scripts. Uses FilesMatch regex to deny all script types. Options -Indexes disables directory browsing. Prevents webshell attacks through upload.</td>
+            </tr>
+            <tr>
+                <td><strong>events (table)</strong></td>
+                <td><span class="badge badge-sql">SQL</span></td>
+                <td>Stores event metadata. poster_image column holds only the filename (not full path). category ENUM: workshop/seminar/hackathon/cultural/sports/other. status ENUM: open/closed.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>🖼️ File Upload Validation</h4>
+            <ul>
+                <li>MIME: image/jpeg, image/png, image/webp</li>
+                <li>Uses finfo_file() (not $_FILES type)</li>
+                <li>Max size: 2MB (2×1024×1024 bytes)</li>
+                <li>Extension map matches MIME type</li>
+                <li>UPLOAD_ERR_OK check before processing</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🔒 Secure File Naming</h4>
+            <ul>
+                <li>bin2hex(random_bytes(8)) = 16 hex chars</li>
+                <li>Appends UNIX timestamp</li>
+                <li>Format: event_[hex]_[time].[ext]</li>
+                <li>No original filename used (prevents traversal)</li>
+                <li>move_uploaded_file() to target path</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🛡️ .htaccess Protection</h4>
+            <ul>
+                <li>FilesMatch regex on script extensions</li>
+                <li>Denies: .php .phtml .py .pl .cgi .asp .js .sh</li>
+                <li>Order Deny,Allow – deny by default</li>
+                <li>Options -Indexes – no dir listing</li>
+                <li>Options -ExecCGI – no CGI execution</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📋 Event Form Fields</h4>
+            <ul>
+                <li>Title, Category (ENUM dropdown)</li>
+                <li>Event Date (date picker)</li>
+                <li>Venue, Max Seats</li>
+                <li>Description (textarea)</li>
+                <li>Poster Image (file input)</li>
+                <li>Status (open/closed)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 13 ===== -->
+<div class="section" id="prac13">
+    <div class="section-header" style="background: linear-gradient(135deg, #0dcaf0 0%, #0891b2 100%);">
+        <span class="practical-badge">PRACTICAL 13</span>
+        <h2>PHP JSON REST API &amp; AJAX Fetch UI with Debounced Search</h2>
+        <p>Build a RESTful JSON backend and single-page asynchronous frontend without any page reloads.</p>
+    </div>
+    
+    <div class="objective-box" style="background: #ecfeff; border-color: #0dcaf0;">
+        <h3>Learning Objective</h3>
+        <p>Create a PHP REST API endpoint that returns JSON responses and handles GET, POST, PUT, DELETE HTTP methods. Build an HTML frontend that communicates with this API using the browser's Fetch API for full CRUD operations. Implement debounced live search (300ms) to prevent excessive API calls during typing.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 13</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 13</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>api/students.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>PHP REST API Endpoint. Handles: GET (all or search), GET ?id=N (single), POST (create), PUT (update by body JSON), DELETE ?id=N (soft delete). Returns uniform JSON {success, status, message, data, timestamp}. Sets HTTP status codes (200, 201, 400, 404, 405, 409, 500).</td>
+            </tr>
+            <tr>
+                <td><strong>ajax_students.html</strong></td>
+                <td><span class="badge badge-html">HTML</span></td>
+                <td>Asynchronous CRUD frontend. Uses window.fetch() to call api/students.php. Add (POST), Edit (pre-filled modal → PUT), Delete (DELETE with confirm). Live search with 300ms debounce via setTimeout. Toast notifications. Zero page reloads.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>🔌 REST API Methods</h4>
+            <ul>
+                <li>GET /api/students.php → list all</li>
+                <li>GET ?search=term → filtered list</li>
+                <li>GET ?id=N → single record</li>
+                <li>POST + JSON body → create (201)</li>
+                <li>PUT + JSON body → update (200)</li>
+                <li>DELETE ?id=N → soft-delete (200)</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📡 Fetch API Usage</h4>
+            <ul>
+                <li>fetch(url) for GET requests</li>
+                <li>fetch(url, {method:'POST', body:JSON}) for writes</li>
+                <li>response.json() to parse response</li>
+                <li>try/catch for network error handling</li>
+                <li>async/await syntax throughout</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>⌨️ Debounced Search</h4>
+            <ul>
+                <li>addEventListener('input', handler)</li>
+                <li>clearTimeout(debounceTimer) on each keypress</li>
+                <li>setTimeout fires after 300ms silence</li>
+                <li>Only last keypress triggers API call</li>
+                <li>Prevents excessive server requests</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📬 API Response Format</h4>
+            <ul>
+                <li>success: true/false boolean</li>
+                <li>status: HTTP code (200/201/404 etc)</li>
+                <li>message: human-readable string</li>
+                <li>data: array or object payload</li>
+                <li>timestamp: ISO 8601 datetime</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 14 ===== -->
+<div class="section" id="prac14">
+    <div class="section-header" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-left: 6px solid #fd7e14;">
+        <span class="practical-badge">PRACTICAL 14</span>
+        <h2>Admin Dashboard with RBAC, SQL Aggregations &amp; User Status Toggle</h2>
+        <p>Executive admin control panel with real-time KPI metrics, governance controls, and analytics charts.</p>
+    </div>
+    
+    <div class="objective-box" style="background: #fffbeb; border-color: #fd7e14;">
+        <h3>Learning Objective</h3>
+        <p>Build a protected admin dashboard that enforces strict role-based access control. Display key performance indicators using SQL aggregate functions (COUNT, GROUP BY). Implement a user account activation/deactivation toggle. Show category-based event registration analytics with a CSS progress bar chart.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 14</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 14</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>admin_dashboard.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Admin-only protected page. require_role('admin') enforces access. KPI section: 4 aggregation queries (total users, students, events, registrations). User governance table: list all users with active/inactive toggle form. Audit log panel: last 10 entries. Analytics chart: registrations by event category (CSS bars calculated from MySQL GROUP BY query).</td>
+            </tr>
+            <tr>
+                <td><strong>db.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>require_role() function: calls require_login() then checks $_SESSION['role']. If wrong role: logs UNAUTHORIZED_ACCESS_BLOCKED and redirects to login.php?error=forbidden.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>📊 SQL Aggregations Used</h4>
+            <ul>
+                <li>COUNT(*) FROM users → total users</li>
+                <li>COUNT(*) FROM students WHERE status!='deleted'</li>
+                <li>COUNT(*) FROM events → total events</li>
+                <li>COUNT(*) FROM event_registrations</li>
+                <li>GROUP BY category + COUNT for chart data</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>👤 User Governance</h4>
+            <ul>
+                <li>List all users with roles and status</li>
+                <li>Toggle: active ↔ inactive per user</li>
+                <li>Admin cannot deactivate own account</li>
+                <li>CSRF-protected toggle form</li>
+                <li>Logs USER_STATUS_TOGGLED audit event</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🔒 RBAC Enforcement</h4>
+            <ul>
+                <li>require_role('admin') at top of file</li>
+                <li>Checks $_SESSION['role'] === 'admin'</li>
+                <li>403-equivalent redirect on fail</li>
+                <li>Dynamic nav menu changes by role</li>
+                <li>Admin pill badge in header</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>📈 Analytics (Advanced)</h4>
+            <ul>
+                <li>LEFT JOIN events + event_registrations</li>
+                <li>GROUP BY e.category</li>
+                <li>CSS bar width = (count/max) × 100%</li>
+                <li>Gradient fill: #0d6efd → #6f42c1</li>
+                <li>Live from MySQL on every page load</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== PRACTICAL 15 ===== -->
+<div class="section" id="prac15">
+    <div class="section-header" style="background: linear-gradient(135deg, #198754 0%, #0f5132 100%);">
+        <span class="practical-badge">PRACTICAL 15</span>
+        <h2>Final Integration, Automated Test Suite &amp; System Diagnostics</h2>
+        <p>End-to-end integration testing across all components, security verification, and deployment documentation.</p>
+    </div>
+    
+    <div class="objective-box" style="background: #f0fdf4; border-color: #198754;">
+        <h3>Learning Objective</h3>
+        <p>Verify the complete application works as an integrated system. Run automated checks on database connectivity, schema tables, security configurations, upload permissions, API endpoints, and RBAC policies. Document all findings and confirm the system is production-ready.</p>
+    </div>
+    
+    <p class="file-map-title">Files for Practical 15</p>
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Type</th>
+                <th>Role in Practical 15</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>system_status.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>Automated QA suite. Runs 10+ integration tests and displays PASS/FAIL/WARN results in a table. Tests: MySQLi connection, PDO connection, 5 table verifications (row counts), session HttpOnly cookie flag, idle timeout policy, upload directory writable, .htaccess shield, REST API file existence, default admin account seed.</td>
+            </tr>
+            <tr>
+                <td><strong>studenthub.sql</strong></td>
+                <td><span class="badge badge-sql">SQL</span></td>
+                <td>Complete schema with all tables, VIEW (v_registrations), Stored Procedure (GetStudentRegistrations), and full seed data. Used to initialize fresh deployments.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>🔬 Integration Tests Run</h4>
+            <ul>
+                <li>Database: MySQLi + PDO connections</li>
+                <li>Schema: 5 table existence checks</li>
+                <li>Security: Session HttpOnly flag</li>
+                <li>Security: 15-min timeout policy</li>
+                <li>Storage: uploads/posters/ writable</li>
+                <li>Storage: .htaccess shield present</li>
+                <li>API: api/students.php file present</li>
+                <li>Users: admin seed account exists</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>✅ PASS / ⚠️ WARN / ❌ FAIL</h4>
+            <ul>
+                <li>PASS = fully verified and working</li>
+                <li>WARN = works but recommendation exists</li>
+                <li>FAIL = critical issue to resolve</li>
+                <li>Displayed in color-coded badge table</li>
+                <li>Re-run button for live re-check</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🌐 Application Entry Points</h4>
+            <ul>
+                <li>Homepage: index.html</li>
+                <li>Secure Login: login.php</li>
+                <li>Student Portal: student_dashboard.php</li>
+                <li>Admin Control: admin_dashboard.php</li>
+                <li>Student CRUD: students_crud.php</li>
+                <li>Event CRUD: events_crud.php</li>
+                <li>AJAX Console: ajax_students.html</li>
+                <li>QA Suite: system_status.php</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h4>🚀 Setup Instructions</h4>
+            <ul>
+                <li>1. Start XAMPP (Apache + MySQL)</li>
+                <li>2. Import studenthub.sql via phpMyAdmin</li>
+                <li>3. Open: localhost/studenthub_practical7/</li>
+                <li>4. Login: admin / Password@123</li>
+                <li>5. Run: system_status.php for QA</li>
+                <li>6. Test all pages and features</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="conclusion-box">
+        <h3>🎓 Final Project Summary</h3>
+        <p>The StudentHub Portal implements all 8 practicals (8-15) as a cohesive, production-quality web application using PHP 8, MySQL InnoDB, and vanilla HTML/CSS/JavaScript. The system demonstrates: secure authentication with BCRYPT and PHP sessions; CSRF-protected CRUD operations with MySQLi prepared statements; a RESTful JSON API with asynchronous Fetch frontend; MIME-validated file uploads with .htaccess directory shielding; strict role-based access control separating admin and student areas; and a real-time admin dashboard with SQL aggregations and audit telemetry. All pages use the unified StudentHub design system for a polished, professional experience.</p>
+    </div>
+</div>
+
+
+<!-- ===== MASTER FILE INDEX ===== -->
+<div class="master-map" id="mastermap">
+    <div style="background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; padding: 1.5rem 2rem; border-radius: 10px; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; margin: 0 0 0.3rem 0;">📋 Master File Index – All Practicals</h2>
+        <p style="margin:0; opacity:0.85; font-size: 0.9rem;">Complete mapping of every file to its practical(s) in the StudentHub project folder.</p>
+    </div>
+    
+    <table class="file-table">
+        <thead>
+            <tr>
+                <th style="width: 220px;">File Path</th>
+                <th style="width: 80px;">Type</th>
+                <th style="width: 140px;">Practical(s)</th>
+                <th>Purpose / Key Concepts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Core Infrastructure -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #0d6efd; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Core Infrastructure</td>
+            </tr>
+            <tr>
+                <td><strong>studenthub.sql</strong></td>
+                <td><span class="badge badge-sql">SQL</span></td>
+                <td><span class="badge badge-core">8,9,10,11,12,13,14,15</span></td>
+                <td>Unified schema: 5 InnoDB tables, 1 VIEW, 1 Stored Procedure, seed data with BCRYPT password hashes</td>
+            </tr>
+            <tr>
+                <td><strong>db.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td><span class="badge badge-core">8,9,10,11,12,13,14,15</span></td>
+                <td>PDO + MySQLi dual connector, session helpers, RBAC functions, CSRF, audit logger, remember-me token handler</td>
+            </tr>
+            <tr>
+                <td><strong>style.css</strong></td>
+                <td><span class="badge badge-css">CSS</span></td>
+                <td><span class="badge badge-core">All</span></td>
+                <td>Unified StudentHub design system: dark mode, responsive nav, cards, forms, theme variables</td>
+            </tr>
+            <tr>
+                <td><strong>script.js</strong></td>
+                <td><span class="badge badge-html">JS</span></td>
+                <td><span class="badge badge-core">All</span></td>
+                <td>Theme toggle, hamburger nav, form validation logic, shared UI behavior</td>
+            </tr>
+            
+            <!-- Practical 8 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #0d6efd; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 8 – MySQL Schema &amp; PDO</td>
+            </tr>
+            <tr>
+                <td><strong>view_students.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>8</td>
+                <td>PDO FETCH_ASSOC list with search (LIKE parameterized), course stats, ORDER BY</td>
+            </tr>
+            <tr>
+                <td><strong>view_events.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>8</td>
+                <td>PDO event listing, event registration INSERT with FK, duplicate check</td>
+            </tr>
+            <tr>
+                <td><strong>practical8/index.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>8</td>
+                <td>Practical 8 hub: DB status, row counts, links to all Prac 8 pages</td>
+            </tr>
+            <tr>
+                <td><strong>practical8/schema_info.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>8</td>
+                <td>Dynamic ER diagram viewer using INFORMATION_SCHEMA queries</td>
+            </tr>
+            
+            <!-- Practical 9 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #198754; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 9 – Secure Registration</td>
+            </tr>
+            <tr>
+                <td><strong>practical9/register.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>9</td>
+                <td>Secure signup: CSRF token, duplicate check, password_hash(BCRYPT), audit log on success/block</td>
+            </tr>
+            
+            <!-- Practical 10 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #6f42c1; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 10 – Authentication &amp; Sessions</td>
+            </tr>
+            <tr>
+                <td><strong>login.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>10</td>
+                <td>BCRYPT verify, session_regenerate_id, role redirect, remember-me checkbox handler, timeout messages</td>
+            </tr>
+            <tr>
+                <td><strong>logout.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>10</td>
+                <td>Destroy session, clear cookie, null DB token, log LOGOUT audit event</td>
+            </tr>
+            <tr>
+                <td><strong>student_dashboard.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>10</td>
+                <td>require_login() guard, session data display, registered events fetch, upcoming events listing</td>
+            </tr>
+            
+            <!-- Practical 11 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #fd7e14; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 11 – Student CRUD</td>
+            </tr>
+            <tr>
+                <td><strong>students_crud.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>11</td>
+                <td>Full CRUD with modals, dynamic filter query builder, soft delete with restore, audit logging</td>
+            </tr>
+            <tr>
+                <td><strong>export_students_csv.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>11</td>
+                <td>CSV download with UTF-8 BOM, fputcsv, timestamped filename, 8 columns exported</td>
+            </tr>
+            
+            <!-- Practical 12 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #dc3545; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 12 – Event Management &amp; File Upload</td>
+            </tr>
+            <tr>
+                <td><strong>events_crud.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>12</td>
+                <td>Event CRUD with poster upload, MIME finfo check, size validation, secure renaming, category/status filter grid</td>
+            </tr>
+            <tr>
+                <td><strong>uploads/posters/</strong></td>
+                <td><span class="badge badge-html">DIR</span></td>
+                <td>12</td>
+                <td>Secure image storage directory for uploaded event posters</td>
+            </tr>
+            <tr>
+                <td><strong>uploads/posters/.htaccess</strong></td>
+                <td><span class="badge badge-htaccess">.htaccess</span></td>
+                <td>12</td>
+                <td>Blocks PHP/CGI/JS execution, disables directory listing to prevent webshell attacks</td>
+            </tr>
+            
+            <!-- Practical 13 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #0891b2; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 13 – REST API &amp; AJAX</td>
+            </tr>
+            <tr>
+                <td><strong>api/students.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>13</td>
+                <td>RESTful JSON endpoint: GET/POST/PUT/DELETE with HTTP status codes (200/201/400/404/409/500)</td>
+            </tr>
+            <tr>
+                <td><strong>ajax_students.html</strong></td>
+                <td><span class="badge badge-html">HTML</span></td>
+                <td>13</td>
+                <td>Single-page Fetch API CRUD console, 300ms debounced search, toast notifications, no page reloads</td>
+            </tr>
+            
+            <!-- Practical 14 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #fd7e14; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 14 – Admin Dashboard &amp; RBAC</td>
+            </tr>
+            <tr>
+                <td><strong>admin_dashboard.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>14</td>
+                <td>require_role('admin'), KPI SQL aggregations, user status toggle, audit log panel, category analytics CSS chart</td>
+            </tr>
+            
+            <!-- Practical 15 -->
+            <tr style="background: #f8fafc;">
+                <td colspan="4" style="font-weight: 700; color: #198754; padding: 0.5rem 1rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border: none;">Practical 15 – Final Integration &amp; QA</td>
+            </tr>
+            <tr>
+                <td><strong>system_status.php</strong></td>
+                <td><span class="badge badge-php">PHP</span></td>
+                <td>15</td>
+                <td>Automated QA runner: 10+ integration tests for DB, tables, security, uploads, API, users with PASS/FAIL/WARN results</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div style="margin-top: 2rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem;">
+        <h3 style="color: #0d6efd; margin-bottom: 1rem; font-size: 1rem;">🔑 Default Demo Credentials</h3>
+        <table style="border-collapse: collapse; font-size: 0.88rem; width: 100%;">
+            <tr>
+                <td style="padding: 0.5rem 1rem; font-weight: 600;">Admin Login</td>
+                <td style="padding: 0.5rem 1rem;"><code style="background: #e0f2fe; padding: 0.15rem 0.4rem; border-radius: 3px;">admin</code> / <code style="background: #e0f2fe; padding: 0.15rem 0.4rem; border-radius: 3px;">Password@123</code></td>
+                <td style="padding: 0.5rem 1rem; color: #64748b;">Full access → admin_dashboard.php</td>
+            </tr>
+            <tr>
+                <td style="padding: 0.5rem 1rem; font-weight: 600;">Student Login</td>
+                <td style="padding: 0.5rem 1rem;"><code style="background: #e0f2fe; padding: 0.15rem 0.4rem; border-radius: 3px;">student1</code> / <code style="background: #e0f2fe; padding: 0.15rem 0.4rem; border-radius: 3px;">Password@123</code></td>
+                <td style="padding: 0.5rem 1rem; color: #64748b;">Student portal → student_dashboard.php</td>
+            </tr>
+            <tr>
+                <td style="padding: 0.5rem 1rem; font-weight: 600;">Application URL</td>
+                <td colspan="2" style="padding: 0.5rem 1rem;"><code style="background: #e0f2fe; padding: 0.15rem 0.4rem; border-radius: 3px;">http://localhost/studenthub_practical7/</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 0.5rem 1rem; font-weight: 600;">QA Suite URL</td>
+                <td colspan="2" style="padding: 0.5rem 1rem;"><code style="background: #e0f2fe; padding: 0.15rem 0.4rem; border-radius: 3px;">http://localhost/studenthub_practical7/system_status.php</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 0.5rem 1rem; font-weight: 600;">REST API URL</td>
+                <td colspan="2" style="padding: 0.5rem 1rem;"><code style="background: #e0f2fe; padding: 0.15rem 0.4rem; border-radius: 3px;">http://localhost/studenthub_practical7/api/students.php</code></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="margin-top: 2rem; text-align: center; color: #94a3b8; font-size: 0.82rem; padding: 1rem; border-top: 1px solid #e2e8f0;">
+        <p>StudentHub Portal – Web Development Practicals 8 to 15 | PHP 8 + MySQL + HTML5 | XAMPP Development Environment</p>
+    </div>
+</div>
+
+</body>
+</html>
