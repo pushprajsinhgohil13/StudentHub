@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Events</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>🎓 StudentHub</h2>
+            </div>
+
+            <!-- Hamburger -->
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="courses.html">Courses</a>
+                <a href="attendance.html">Attendance</a>
+                <a href="assignments.html">Assignments</a>
+                <a href="results.html">Results</a>
+                <a href="library.html">Library</a>
+                <a href="events.html">Events</a>
+                <a href="profile.html">Profile</a>
+
+            </nav>
+
+            <!-- Dark Mode -->
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification">
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button">
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            🎉 Campus Events
+        </h1>
+
+        <p>
+            Discover workshops, seminars, hackathons
+            and other campus activities.
+        </p>
+
+    </section>
+
+
+    <!-- ================= EVENT FILTER ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Find Events
+        </h2>
+
+        <div class="card">
+
+            <!-- Search -->
+
+            <label for="eventSearch">
+                Search Event
+            </label>
+
+            <input
+                type="text"
+                id="eventSearch"
+                placeholder="Search by event name..."
+            >
+
+
+            <br>
+            <br>
+
+
+            <!-- Category -->
+
+            <label for="eventCategory">
+                Category
+            </label>
+
+            <select id="eventCategory">
+
+                <option value="all">
+                    All Events
+                </option>
+
+                <option value="workshop">
+                    Workshop
+                </option>
+
+                <option value="seminar">
+                    Seminar
+                </option>
+
+                <option value="hackathon">
+                    Hackathon
+                </option>
+
+                <option value="cultural">
+                    Cultural
+                </option>
+
+            </select>
+
+
+            <br>
+            <br>
+
+
+            <!-- Sort -->
+
+            <label for="eventSort">
+                Sort Events
+            </label>
+
+            <select id="eventSort">
+
+                <option value="default">
+                    Default Order
+                </option>
+
+                <option value="dateAsc">
+                    Date: Earliest First
+                </option>
+
+                <option value="dateDesc">
+                    Date: Latest First
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EVENTS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Upcoming Events
+        </h2>
+
+
+        <!--
+            Events will be loaded from events.json
+            using Fetch API.
+        -->
+
+        <div
+            class="grid"
+            id="eventGrid">
+
+            <!-- JavaScript will add events here -->
+
+        </div>
+
+
+        <!-- No Results -->
+
+        <p
+            id="noEvents"
+            style="display: none; text-align: center;">
+
+            No events found.
+
+        </p>
+
+
+        <!-- Loading -->
+
+        <p
+            id="loadingEvents"
+            style="text-align: center;">
+
+            Loading events...
+
+        </p>
+
+
+        <!-- Pagination -->
+
+        <div
+            id="pagination"
+            style="text-align: center; margin: 20px;">
+
+            <!-- JavaScript will add pagination buttons -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTERED EVENTS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            My Registered Events
+        </h2>
+
+
+        <table id="registeredEvents">
+
+            <tr>
+
+                <th>
+                    Event
+                </th>
+
+                <th>
+                    Status
+                </th>
+
+                <th>
+                    Action
+                </th>
+
+            </tr>
+
+
+            <tr id="noRegisteredEvents">
+
+                <td
+                    colspan="3"
+                    align="center">
+
+                    No events registered yet.
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ================= EVENT MODAL ================= -->
+
+    <div
+        class="modal"
+        id="eventModal">
+
+        <div class="modal-content">
+
+
+            <button
+                class="modal-close"
+                id="eventModalClose"
+                type="button">
+
+                ×
+
+            </button>
+
+
+            <h2>
+                🎉 Event Registration
+            </h2>
+
+
+            <br>
+
+
+            <p id="eventModalText">
+                Event information.
+            </p>
+
+
+            <br>
+
+
+            <button
+                id="eventModalDone"
+                type="button">
+
+                Done
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+    <!-- ================= MAIN JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

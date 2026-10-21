@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Assignments</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+                <h2>🎓 StudentHub</h2>
+            </div>
+
+
+            <!-- Hamburger -->
+
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+                <a href="courses.html">Courses</a>
+
+                <a href="attendance.html">Attendance</a>
+
+                <a href="assignments.html">Assignments</a>
+
+                <a href="results.html">Results</a>
+
+                <a href="library.html">Library</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="profile.html">Profile</a>
+
+            </nav>
+
+
+            <!-- Theme -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            Assignments
+        </h1>
+
+        <p>
+            View, submit and manage all your assignments.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= ASSIGNMENT CARDS ================= -->
+
+    <section>
+
+        <div class="grid">
+
+
+            <!-- Data Structures -->
+
+            <div class="card">
+
+                <h3>
+                    Data Structures
+                </h3>
+
+                <p>
+                    <strong>Assignment:</strong>
+                    Linked List
+                </p>
+
+                <p>
+                    <strong>Due Date:</strong>
+                    15 Aug 2026
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    <span>
+                        Pending
+                    </span>
+                </p>
+
+                <button
+                    class="assignment-info"
+                    data-subject="Data Structures"
+                    data-title="Linked List"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+
+            <!-- OOP -->
+
+            <div class="card">
+
+                <h3>
+                    OOP
+                </h3>
+
+                <p>
+                    <strong>Assignment:</strong>
+                    Inheritance
+                </p>
+
+                <p>
+                    <strong>Due Date:</strong>
+                    18 Aug 2026
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    Submitted
+                </p>
+
+                <button
+                    class="assignment-info"
+                    data-subject="OOP"
+                    data-title="Inheritance"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+
+            <!-- DBMS -->
+
+            <div class="card">
+
+                <h3>
+                    DBMS
+                </h3>
+
+                <p>
+                    <strong>Assignment:</strong>
+                    SQL Queries
+                </p>
+
+                <p>
+                    <strong>Due Date:</strong>
+                    20 Aug 2026
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    Pending
+                </p>
+
+                <button
+                    class="assignment-info"
+                    data-subject="DBMS"
+                    data-title="SQL Queries"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SUBMIT ASSIGNMENT ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Submit Assignment
+        </h2>
+
+
+        <form id="assignmentForm">
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="assignmentSubject">
+                        Select Subject
+                    </label>
+
+                    <select
+                        id="assignmentSubject"
+                        required
+                    >
+
+                        <option value="">
+                            -- Select Subject --
+                        </option>
+
+                        <option>
+                            Data Structures
+                        </option>
+
+                        <option>
+                            OOP
+                        </option>
+
+                        <option>
+                            DBMS
+                        </option>
+
+                        <option>
+                            Computer Networks
+                        </option>
+
+                        <option>
+                            Web Development
+                        </option>
+
+                        <option>
+                            Mathematics-II
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="assignmentFile">
+                        Choose Assignment File
+                    </label>
+
+                    <input
+                        type="file"
+                        id="assignmentFile"
+                        accept=".pdf,.doc,.docx,.zip"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <input
+                type="submit"
+                value="Upload Assignment"
+            >
+
+            <input
+                type="reset"
+                value="Clear"
+            >
+
+
+        </form>
+
+    </section>
+
+
+
+    <!-- ================= ASSIGNMENT HISTORY ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Assignment History
+        </h2>
+
+
+        <table>
+
+            <tr>
+
+                <th>
+                    Subject
+                </th>
+
+                <th>
+                    Title
+                </th>
+
+                <th>
+                    Status
+                </th>
+
+                <th>
+                    Marks
+                </th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Data Structures
+                </td>
+
+                <td>
+                    Arrays
+                </td>
+
+                <td>
+                    Submitted
+                </td>
+
+                <td>
+                    9 / 10
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    OOP
+                </td>
+
+                <td>
+                    Classes & Objects
+                </td>
+
+                <td>
+                    Submitted
+                </td>
+
+                <td>
+                    10 / 10
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    DBMS
+                </td>
+
+                <td>
+                    Normalization
+                </td>
+
+                <td>
+                    Pending
+                </td>
+
+                <td>
+                    -
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ================= ASSIGNMENT MODAL ================= -->
+
+    <div
+        class="modal"
+        id="assignmentModal"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                class="modal-close"
+                id="assignmentModalClose"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h2 id="assignmentModalTitle">
+                Assignment Details
+            </h2>
+
+
+            <br>
+
+
+            <p id="assignmentModalText">
+                Assignment information.
+            </p>
+
+
+            <br>
+
+
+            <button
+                type="button"
+                id="assignmentModalDone"
+            >
+                Close
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= MAIN JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- ================= ASSIGNMENT JAVASCRIPT ================= -->
+
+    <script>
+
+        /* =========================================
+           Assignment Details Modal
+        ========================================= */
+
+        const assignmentButtons =
+            document.querySelectorAll(".assignment-info");
+
+        const assignmentModal =
+            document.getElementById("assignmentModal");
+
+        const assignmentModalTitle =
+            document.getElementById("assignmentModalTitle");
+
+        const assignmentModalText =
+            document.getElementById("assignmentModalText");
+
+        const assignmentModalClose =
+            document.getElementById("assignmentModalClose");
+
+        const assignmentModalDone =
+            document.getElementById("assignmentModalDone");
+
+
+        assignmentButtons.forEach(function(button) {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    const subject =
+                        button.getAttribute("data-subject");
+
+                    const title =
+                        button.getAttribute("data-title");
+
+
+                    assignmentModalTitle.textContent =
+                        title;
+
+
+                    assignmentModalText.textContent =
+                        "Subject: " +
+                        subject +
+                        " | Assignment: " +
+                        title +
+                        ". You can submit the assignment using the submission form below.";
+
+
+                    assignmentModal.classList.add("show");
+
+                }
+            );
+
+        });
+
+
+        function closeAssignmentModal() {
+
+            assignmentModal.classList.remove("show");
+
+        }
+
+
+        assignmentModalClose.addEventListener(
+            "click",
+            closeAssignmentModal
+        );
+
+
+        assignmentModalDone.addEventListener(
+            "click",
+            closeAssignmentModal
+        );
+
+
+        assignmentModal.addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target === assignmentModal) {
+
+                    closeAssignmentModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           Assignment Upload Form
+        ========================================= */
+
+        const assignmentForm =
+            document.getElementById("assignmentForm");
+
+
+        assignmentForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const subject =
+                    document.getElementById(
+                        "assignmentSubject"
+                    ).value;
+
+
+                const file =
+                    document.getElementById(
+                        "assignmentFile"
+                    ).files[0];
+
+
+                if (!subject) {
+
+                    showNotification(
+                        "Please select a subject.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                if (!file) {
+
+                    showNotification(
+                        "Please choose an assignment file.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                showNotification(
+                    file.name +
+                    " selected successfully for " +
+                    subject +
+                    ".",
+                    "success"
+                );
+
+
+                /*
+                    Demo only:
+                    No real server upload occurs.
+                */
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

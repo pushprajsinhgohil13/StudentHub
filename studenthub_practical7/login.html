@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+
+                <h2>🎓 StudentHub</h2>
+
+            </div>
+
+
+            <!-- Theme Switcher -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= LOGIN ================= -->
+
+    <main>
+
+        <section>
+
+            <div
+                class="card"
+                style="max-width:450px; margin:60px auto;"
+            >
+
+
+                <div style="text-align:center;">
+
+                    <div
+                        style="font-size:60px;"
+                    >
+                        🎓
+                    </div>
+
+
+                    <h1>
+                        StudentHub Login
+                    </h1>
+
+
+                    <p>
+                        Login to access your student portal.
+                    </p>
+
+                </div>
+
+
+                <br>
+
+
+                <!-- Login Form -->
+
+                <form id="loginForm">
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email / Student ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="loginEmail"
+                            placeholder="Enter email or student ID"
+                            required
+                        >
+
+                        <small
+                            id="emailError"
+                            style="display:none;"
+                        >
+                            Please enter your email or student ID.
+                        </small>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+
+                        <div
+                            style="
+                            display:flex;
+                            gap:8px;
+                            align-items:center;
+                            "
+                        >
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter password"
+                                required
+                                style="flex:1;"
+                            >
+
+
+                            <button
+                                type="button"
+                                id="showPassword"
+                            >
+                                👁️
+                            </button>
+
+                        </div>
+
+
+                        <small
+                            id="passwordError"
+                            style="display:none;"
+                        >
+                            Password must contain at least 6 characters.
+                        </small>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <!-- Remember Me -->
+
+                    <div>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            Remember me
+
+                        </label>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <!-- Login -->
+
+                    <button
+                        type="submit"
+                        style="width:100%;"
+                    >
+                        Login
+                    </button>
+
+
+                    <br>
+                    <br>
+
+
+                    <!-- Reset -->
+
+                    <button
+                        type="reset"
+                        id="clearLogin"
+                        style="width:100%;"
+                    >
+                        Clear
+                    </button>
+
+
+                </form>
+
+
+                <br>
+
+
+                <p
+                    id="loginStatus"
+                    style="text-align:center;"
+                ></p>
+
+
+                <hr>
+
+
+                <p style="text-align:center;">
+
+                    Demo Login
+
+                    <br>
+
+                    <small>
+                        Use any valid email/student ID
+                        and a password of 6+ characters.
+                    </small>
+
+                </p>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        /* =========================================
+           LOGIN ELEMENTS
+        ========================================= */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        const loginEmail =
+            document.getElementById("loginEmail");
+
+
+        const loginPassword =
+            document.getElementById("loginPassword");
+
+
+        const showPassword =
+            document.getElementById("showPassword");
+
+
+        const emailError =
+            document.getElementById("emailError");
+
+
+        const passwordError =
+            document.getElementById("passwordError");
+
+
+        const loginStatus =
+            document.getElementById("loginStatus");
+
+
+        const rememberMe =
+            document.getElementById("rememberMe");
+
+
+
+        /* =========================================
+           SHOW / HIDE PASSWORD
+        ========================================= */
+
+        showPassword.addEventListener(
+            "click",
+            function() {
+
+                if (
+                    loginPassword.type ===
+                    "password"
+                ) {
+
+                    loginPassword.type =
+                        "text";
+
+                    showPassword.textContent =
+                        "🙈";
+
+                } else {
+
+                    loginPassword.type =
+                        "password";
+
+                    showPassword.textContent =
+                        "👁️";
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           LOGIN VALIDATION
+        ========================================= */
+
+        loginForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    loginEmail.value.trim();
+
+
+                const password =
+                    loginPassword.value;
+
+
+                let valid = true;
+
+
+
+                /* Email validation */
+
+                if (email === "") {
+
+                    emailError.style.display =
+                        "block";
+
+                    valid = false;
+
+                } else {
+
+                    emailError.style.display =
+                        "none";
+
+                }
+
+
+
+                /* Password validation */
+
+                if (password.length < 6) {
+
+                    passwordError.style.display =
+                        "block";
+
+                    valid = false;
+
+                } else {
+
+                    passwordError.style.display =
+                        "none";
+
+                }
+
+
+
+                /* Stop if invalid */
+
+                if (!valid) {
+
+                    loginStatus.textContent =
+                        "Please correct the errors above.";
+
+                    loginStatus.style.color =
+                        "#dc3545";
+
+                    return;
+
+                }
+
+
+
+                /* =================================
+                   DEMO LOGIN
+                ================================= */
+
+                loginStatus.textContent =
+                    "Login successful!";
+
+                loginStatus.style.color =
+                    "#198754";
+
+
+
+                /* Remember user */
+
+                if (rememberMe.checked) {
+
+                    localStorage.setItem(
+                        "studenthubUser",
+                        email
+                    );
+
+                }
+
+
+
+                /* Notification */
+
+                if (
+                    typeof showNotification ===
+                    "function"
+                ) {
+
+                    showNotification(
+                        "Login successful. Welcome to StudentHub!",
+                        "success"
+                    );
+
+                }
+
+
+
+                /*
+                    Demo behaviour:
+                    Redirect to dashboard after login.
+                */
+
+                setTimeout(
+                    function() {
+
+                        window.location.href =
+                            "dashboard.html";
+
+                    },
+                    1200
+                );
+
+            }
+        );
+
+
+
+        /* =========================================
+           CLEAR FORM
+        ========================================= */
+
+        document
+            .getElementById("clearLogin")
+            .addEventListener(
+                "click",
+                function() {
+
+                    emailError.style.display =
+                        "none";
+
+                    passwordError.style.display =
+                        "none";
+
+                    loginStatus.textContent =
+                        "";
+
+                }
+            );
+
+
+
+        /* =========================================
+           LOAD REMEMBERED USER
+        ========================================= */
+
+        const savedUser =
+            localStorage.getItem(
+                "studenthubUser"
+            );
+
+
+        if (savedUser) {
+
+            loginEmail.value =
+                savedUser;
+
+            rememberMe.checked =
+                true;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
