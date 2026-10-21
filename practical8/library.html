@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Library</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+                <h2> StudentHub</h2>
+            </div>
+
+
+            <!-- Hamburger -->
+
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+                <a href="courses.html">Courses</a>
+
+                <a href="attendance.html">Attendance</a>
+
+                <a href="assignments.html">Assignments</a>
+
+                <a href="results.html">Results</a>
+
+                <a href="library.html">Library</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="profile.html">Profile</a>
+
+            </nav>
+
+
+            <!-- Theme -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            📚 Library
+        </h1>
+
+        <p>
+            Search books, check availability and manage
+            your library resources.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Search Library
+        </h2>
+
+
+        <div class="card">
+
+            <label for="bookSearch">
+                Search by book title or author
+            </label>
+
+
+            <input
+                type="text"
+                id="bookSearch"
+                placeholder="Type book name or author..."
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BOOKS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Available Books
+        </h2>
+
+
+        <div
+            class="grid"
+            id="bookGrid"
+        >
+
+
+            <!-- Book 1 -->
+
+            <div
+                class="card book-card"
+                data-title="Data Structures and Algorithms"
+                data-author="Robert Lafore"
+            >
+
+                <h3>
+                    Data Structures and Algorithms
+                </h3>
+
+                <p>
+                    Author: Robert Lafore
+                </p>
+
+                <p>
+                    Category: Computer Science
+                </p>
+
+                <p>
+                    Status:
+                    <strong>
+                        Available
+                    </strong>
+                </p>
+
+                <button
+                    class="issue-book"
+                    data-book="Data Structures and Algorithms"
+                    type="button"
+                >
+                    Issue Book
+                </button>
+
+            </div>
+
+
+
+            <!-- Book 2 -->
+
+            <div
+                class="card book-card"
+                data-title="Object Oriented Programming in C++"
+                data-author="Robert Lafore"
+            >
+
+                <h3>
+                    Object Oriented Programming in C++
+                </h3>
+
+                <p>
+                    Author: Robert Lafore
+                </p>
+
+                <p>
+                    Category: Programming
+                </p>
+
+                <p>
+                    Status:
+                    <strong>
+                        Available
+                    </strong>
+                </p>
+
+                <button
+                    class="issue-book"
+                    data-book="Object Oriented Programming in C++"
+                    type="button"
+                >
+                    Issue Book
+                </button>
+
+            </div>
+
+
+
+            <!-- Book 3 -->
+
+            <div
+                class="card book-card"
+                data-title="Database System Concepts"
+                data-author="Abraham Silberschatz"
+            >
+
+                <h3>
+                    Database System Concepts
+                </h3>
+
+                <p>
+                    Author: Abraham Silberschatz
+                </p>
+
+                <p>
+                    Category: Database
+                </p>
+
+                <p>
+                    Status:
+                    <strong>
+                        Available
+                    </strong>
+                </p>
+
+                <button
+                    class="issue-book"
+                    data-book="Database System Concepts"
+                    type="button"
+                >
+                    Issue Book
+                </button>
+
+            </div>
+
+
+
+            <!-- Book 4 -->
+
+            <div
+                class="card book-card"
+                data-title="Computer Networks"
+                data-author="Andrew S. Tanenbaum"
+            >
+
+                <h3>
+                    Computer Networks
+                </h3>
+
+                <p>
+                    Author: Andrew S. Tanenbaum
+                </p>
+
+                <p>
+                    Category: Networking
+                </p>
+
+                <p>
+                    Status:
+                    <strong>
+                        Available
+                    </strong>
+                </p>
+
+                <button
+                    class="issue-book"
+                    data-book="Computer Networks"
+                    type="button"
+                >
+                    Issue Book
+                </button>
+
+            </div>
+
+
+
+            <!-- Book 5 -->
+
+            <div
+                class="card book-card"
+                data-title="Learning Web Design"
+                data-author="Jennifer Niederst Robbins"
+            >
+
+                <h3>
+                    Learning Web Design
+                </h3>
+
+                <p>
+                    Author: Jennifer Niederst Robbins
+                </p>
+
+                <p>
+                    Category: Web Development
+                </p>
+
+                <p>
+                    Status:
+                    <strong>
+                        Available
+                    </strong>
+                </p>
+
+                <button
+                    class="issue-book"
+                    data-book="Learning Web Design"
+                    type="button"
+                >
+                    Issue Book
+                </button>
+
+            </div>
+
+
+
+            <!-- Book 6 -->
+
+            <div
+                class="card book-card"
+                data-title="Introduction to Algorithms"
+                data-author="Thomas H. Cormen"
+            >
+
+                <h3>
+                    Introduction to Algorithms
+                </h3>
+
+                <p>
+                    Author: Thomas H. Cormen
+                </p>
+
+                <p>
+                    Category: Algorithms
+                </p>
+
+                <p>
+                    Status:
+                    <strong>
+                        Available
+                    </strong>
+                </p>
+
+                <button
+                    class="issue-book"
+                    data-book="Introduction to Algorithms"
+                    type="button"
+                >
+                    Issue Book
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- No Result -->
+
+        <p
+            id="noBooks"
+            style="display:none; text-align:center;"
+        >
+            No books found.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= ISSUED BOOKS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            My Issued Books
+        </h2>
+
+
+        <table id="issuedBooksTable">
+
+            <tr>
+
+                <th>
+                    Book
+                </th>
+
+                <th>
+                    Issue Date
+                </th>
+
+                <th>
+                    Due Date
+                </th>
+
+                <th>
+                    Action
+                </th>
+
+            </tr>
+
+
+            <tr id="noIssuedBooks">
+
+                <td colspan="4" align="center">
+                    No books currently issued.
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ================= BOOK MODAL ================= -->
+
+    <div
+        class="modal"
+        id="bookModal"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                class="modal-close"
+                id="bookModalClose"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                📚 Book Issued
+            </h2>
+
+
+            <br>
+
+
+            <p id="bookModalText">
+                Book information.
+            </p>
+
+
+            <br>
+
+
+            <button
+                type="button"
+                id="bookModalDone"
+            >
+                Done
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= MAIN JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- ================= LIBRARY JAVASCRIPT ================= -->
+
+    <script>
+
+        /* =========================================
+           BOOK SEARCH
+        ========================================= */
+
+        const bookSearch =
+            document.getElementById("bookSearch");
+
+        const bookCards =
+            document.querySelectorAll(".book-card");
+
+        const noBooks =
+            document.getElementById("noBooks");
+
+
+        bookSearch.addEventListener(
+            "input",
+            function() {
+
+                const searchText =
+                    bookSearch.value
+                    .toLowerCase()
+                    .trim();
+
+
+                let visibleBooks = 0;
+
+
+                bookCards.forEach(function(card) {
+
+                    const title =
+                        card.getAttribute("data-title")
+                        .toLowerCase();
+
+                    const author =
+                        card.getAttribute("data-author")
+                        .toLowerCase();
+
+
+                    if (
+                        title.includes(searchText) ||
+                        author.includes(searchText)
+                    ) {
+
+                        card.style.display = "";
+
+                        visibleBooks++;
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+
+                if (visibleBooks === 0) {
+
+                    noBooks.style.display = "block";
+
+                } else {
+
+                    noBooks.style.display = "none";
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           ISSUE BOOK
+        ========================================= */
+
+        const issueButtons =
+            document.querySelectorAll(".issue-book");
+
+        const issuedBooksTable =
+            document.getElementById("issuedBooksTable");
+
+        const noIssuedBooks =
+            document.getElementById("noIssuedBooks");
+
+        const bookModal =
+            document.getElementById("bookModal");
+
+        const bookModalText =
+            document.getElementById("bookModalText");
+
+        const bookModalClose =
+            document.getElementById("bookModalClose");
+
+        const bookModalDone =
+            document.getElementById("bookModalDone");
+
+
+        issueButtons.forEach(function(button) {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    const bookName =
+                        button.getAttribute("data-book");
+
+
+                    /*
+                        Current date
+                    */
+
+                    const issueDate =
+                        new Date();
+
+
+                    /*
+                        Due date = 14 days later
+                    */
+
+                    const dueDate =
+                        new Date();
+
+                    dueDate.setDate(
+                        dueDate.getDate() + 14
+                    );
+
+
+                    const issueDateText =
+                        issueDate.toLocaleDateString();
+
+                    const dueDateText =
+                        dueDate.toLocaleDateString();
+
+
+                    /*
+                        Remove "no books" row
+                    */
+
+                    if (noIssuedBooks) {
+
+                        noIssuedBooks.remove();
+
+                    }
+
+
+                    /*
+                        Create new row
+                    */
+
+                    const row =
+                        document.createElement("tr");
+
+
+                    row.innerHTML =
+
+                        "<td>" +
+                        bookName +
+                        "</td>" +
+
+                        "<td>" +
+                        issueDateText +
+                        "</td>" +
+
+                        "<td>" +
+                        dueDateText +
+                        "</td>" +
+
+                        "<td>" +
+
+                        "<button class='return-book' type='button'>" +
+                        "Return" +
+                        "</button>" +
+
+                        "</td>";
+
+
+                    issuedBooksTable.appendChild(row);
+
+
+                    /*
+                        Disable issue button
+                    */
+
+                    button.disabled = true;
+
+                    button.textContent =
+                        "Issued";
+
+
+                    /*
+                        Notification
+                    */
+
+                    if (
+                        typeof showNotification ===
+                        "function"
+                    ) {
+
+                        showNotification(
+                            bookName +
+                            " issued successfully.",
+                            "success"
+                        );
+
+                    }
+
+
+                    /*
+                        Modal
+                    */
+
+                    bookModalText.textContent =
+                        bookName +
+                        " has been issued successfully. Due date: " +
+                        dueDateText +
+                        ".";
+
+
+                    bookModal.classList.add("show");
+
+
+                    /*
+                        Return button
+                    */
+
+                    const returnButton =
+                        row.querySelector(".return-book");
+
+
+                    returnButton.addEventListener(
+                        "click",
+                        function() {
+
+                            row.remove();
+
+                            button.disabled = false;
+
+                            button.textContent =
+                                "Issue Book";
+
+
+                            if (
+                                typeof showNotification ===
+                                "function"
+                            ) {
+
+                                showNotification(
+                                    bookName +
+                                    " returned successfully.",
+                                    "success"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+
+        /* =========================================
+           MODAL CLOSE
+        ========================================= */
+
+        function closeBookModal() {
+
+            bookModal.classList.remove("show");
+
+        }
+
+
+        bookModalClose.addEventListener(
+            "click",
+            closeBookModal
+        );
+
+
+        bookModalDone.addEventListener(
+            "click",
+            closeBookModal
+        );
+
+
+        bookModal.addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target === bookModal) {
+
+                    closeBookModal();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub | Database Architecture &amp; ER Model</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .er-card {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+        body.dark-mode .er-card {
+            background: #1e293b;
+            border-color: #334155;
+            color: #f1f5f9;
+        }
+        .norm-box {
+            background: #f8fafc;
+            border-left: 4px solid #0d6efd;
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+        body.dark-mode .norm-box {
+            background: #0f172a;
+            border-left-color: #38bdf8;
+            color: #cbd5e1;
+        }
+        .norm-badge {
+            display: inline-block;
+            background: #0d6efd;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+        .key-tag {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .key-pk { background: #fff3cd; color: #856404; }
+        .key-fk { background: #cce5ff; color: #004085; }
+        .key-uq { background: #d4edda; color: #155724; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2>🎓 StudentHub</h2>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button class="hamburger" id="hamburgerBtn" type="button">☰</button>
+
+            <!-- Navigation -->
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="registration.html">Registration</a>
+                <a href="view_students.php">Students</a>
+                <a href="events.html">Events</a>
+                <a href="view_events.php">Event Bookings</a>
+                <a href="stored_procedures.php">Registrations Lookup</a>
+                <a href="er_model.html" style="color: yellow; text-decoration: underline;">Database Model</a>
+                <a href="test_connection.php">System Status</a>
+                <a href="dashboard.html">Dashboard</a>
+            </nav>
+
+            <!-- Theme Toggle -->
+            <button class="theme-btn" id="themeToggle" type="button">🌙 Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <h1>📊 Database Architecture &amp; ER Model</h1>
+        <p>
+            Entity-Relationship model design and relational normalization structure for StudentHub.
+        </p>
+    </section>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container" style="max-width: 1100px; margin: 30px auto; padding: 0 15px;">
+
+        <!-- 1. Visual ER Diagram (Crow's Foot SVG) -->
+        <div class="er-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                <h2 style="margin: 0; font-size: 20px;">Relational ER Diagram (Crow's Foot Notation)</h2>
+                <div>
+                    <span class="key-tag key-pk">PK = Primary Key</span>
+                    <span class="key-tag key-fk">FK = Foreign Key</span>
+                    <span class="key-tag key-uq">UQ = Unique Constraint</span>
+                </div>
+            </div>
+
+            <div style="background: #0f172a; border-radius: 8px; padding: 16px; overflow-x: auto;">
+                <svg viewBox="0 0 920 400" style="width: 100%; min-width: 820px; display: block;" xmlns="http://www.w3.org/2000/svg">
+                    <!-- STUDENTS -->
+                    <g transform="translate(30, 40)">
+                        <rect x="0" y="0" width="240" height="38" rx="6" fill="#0d6efd"/>
+                        <text x="120" y="24" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold" font-size="14">STUDENTS (Entity)</text>
+                        <rect x="0" y="38" width="240" height="230" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+                        <g font-family="monospace" font-size="12" fill="#e2e8f0">
+                            <text x="12" y="62" fill="#ffc107" font-weight="bold">PK id</text><text x="228" y="62" text-anchor="end" fill="#94a3b8">INT UNSIGNED</text>
+                            <text x="12" y="90">name</text><text x="228" y="90" text-anchor="end" fill="#94a3b8">VARCHAR(100)</text>
+                            <text x="12" y="118" fill="#20c997">UQ email</text><text x="228" y="118" text-anchor="end" fill="#94a3b8">VARCHAR(150)</text>
+                            <text x="12" y="146">phone</text><text x="228" y="146" text-anchor="end" fill="#94a3b8">CHAR(10)</text>
+                            <text x="12" y="174">course</text><text x="228" y="174" text-anchor="end" fill="#94a3b8">VARCHAR(50)</text>
+                            <text x="12" y="202">semester</text><text x="228" y="202" text-anchor="end" fill="#94a3b8">TINYINT (1-8)</text>
+                            <text x="12" y="230">created_at</text><text x="228" y="230" text-anchor="end" fill="#94a3b8">DATETIME</text>
+                        </g>
+                    </g>
+
+                    <!-- EVENT_REGISTRATIONS -->
+                    <g transform="translate(340, 55)">
+                        <rect x="0" y="0" width="240" height="38" rx="6" fill="#6f42c1"/>
+                        <text x="120" y="24" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold" font-size="13">EVENT_REGISTRATIONS</text>
+                        <rect x="0" y="38" width="240" height="200" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+                        <g font-family="monospace" font-size="12" fill="#e2e8f0">
+                            <text x="12" y="62" fill="#ffc107" font-weight="bold">PK id</text><text x="228" y="62" text-anchor="end" fill="#94a3b8">INT UNSIGNED</text>
+                            <text x="12" y="92" fill="#0dcaf0" font-weight="bold">FK student_id</text><text x="228" y="92" text-anchor="end" fill="#94a3b8">INT UNSIGNED</text>
+                            <text x="12" y="122" fill="#0dcaf0" font-weight="bold">FK event_id</text><text x="228" y="122" text-anchor="end" fill="#94a3b8">INT UNSIGNED</text>
+                            <text x="12" y="152">registered_at</text><text x="228" y="152" text-anchor="end" fill="#94a3b8">DATETIME</text>
+                            <text x="12" y="182">status</text><text x="228" y="182" text-anchor="end" fill="#94a3b8">ENUM(...)</text>
+                            <text x="12" y="210" fill="#a7f3d0" font-size="10">UNIQUE (student_id, event_id)</text>
+                        </g>
+                    </g>
+
+                    <!-- EVENTS -->
+                    <g transform="translate(650, 40)">
+                        <rect x="0" y="0" width="240" height="38" rx="6" fill="#198754"/>
+                        <text x="120" y="24" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold" font-size="14">EVENTS (Entity)</text>
+                        <rect x="0" y="38" width="240" height="230" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+                        <g font-family="monospace" font-size="12" fill="#e2e8f0">
+                            <text x="12" y="62" fill="#ffc107" font-weight="bold">PK id</text><text x="228" y="62" text-anchor="end" fill="#94a3b8">INT UNSIGNED</text>
+                            <text x="12" y="90">title</text><text x="228" y="90" text-anchor="end" fill="#94a3b8">VARCHAR(200)</text>
+                            <text x="12" y="118">category</text><text x="228" y="118" text-anchor="end" fill="#94a3b8">ENUM(...)</text>
+                            <text x="12" y="146">event_date</text><text x="228" y="146" text-anchor="end" fill="#94a3b8">DATE</text>
+                            <text x="12" y="174">venue</text><text x="228" y="174" text-anchor="end" fill="#94a3b8">VARCHAR(200)</text>
+                            <text x="12" y="202">max_seats</text><text x="228" y="202" text-anchor="end" fill="#94a3b8">SMALLINT (&gt;0)</text>
+                            <text x="12" y="230">created_at</text><text x="228" y="230" text-anchor="end" fill="#94a3b8">DATETIME</text>
+                        </g>
+                    </g>
+
+                    <!-- Connectors -->
+                    <path d="M 270 145 L 340 145" stroke="#0dcaf0" stroke-width="3" fill="none"/>
+                    <path d="M 330 135 L 340 145 L 330 155" stroke="#0dcaf0" stroke-width="2" fill="none"/>
+                    <text x="305" y="135" fill="#0dcaf0" font-family="Arial" font-weight="bold" font-size="11" text-anchor="middle">1 : N</text>
+
+                    <path d="M 580 145 L 650 145" stroke="#20c997" stroke-width="3" fill="none"/>
+                    <path d="M 590 135 L 580 145 L 590 155" stroke="#20c997" stroke-width="2" fill="none"/>
+                    <text x="615" y="135" fill="#20c997" font-family="Arial" font-weight="bold" font-size="11" text-anchor="middle">N : 1</text>
+
+                    <!-- Caption -->
+                    <rect x="230" y="335" width="460" height="40" rx="6" fill="#1e293b"/>
+                    <text x="460" y="360" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="12">
+                        Associative Junction: Many Students &harr; Many Events resolved with Cascading Foreign Keys
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 2. Schema Normalization Analysis -->
+        <div class="er-card">
+            <h2 style="margin-top: 0; font-size: 20px; margin-bottom: 15px;">Database Schema Normalization (UNF &rarr; 1NF &rarr; 2NF &rarr; 3NF)</h2>
+
+            <div class="norm-box">
+                <span class="norm-badge">FIRST NORMAL FORM (1NF)</span>
+                <h4 style="margin: 4px 0 6px 0;">Atomic Values &amp; No Repeating Groups</h4>
+                <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+                    Each field holds a single, atomic value. Rather than storing multiple registered events as comma-separated values inside the student record (which causes parsing complexity and search slowdowns), registrations are broken into discrete rows inside <code>event_registrations</code>.
+                </p>
+            </div>
+
+            <div class="norm-box">
+                <span class="norm-badge">SECOND NORMAL FORM (2NF)</span>
+                <h4 style="margin: 4px 0 6px 0;">Elimination of Partial Dependencies</h4>
+                <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+                    In an unnormalized composite record, student details (<code>name</code>, <code>course</code>) only depend on <code>student_id</code>, and event details (<code>venue</code>, <code>max_seats</code>) only depend on <code>event_id</code>. By decoupling into distinct <code>students</code> and <code>events</code> tables, every non-key attribute is fully functionally dependent on the entire primary key.
+                </p>
+            </div>
+
+            <div class="norm-box">
+                <span class="norm-badge">THIRD NORMAL FORM (3NF)</span>
+                <h4 style="margin: 4px 0 6px 0;">Elimination of Transitive Dependencies</h4>
+                <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+                    No non-prime attribute depends on another non-prime attribute. Every attribute in <code>students</code> depends strictly and solely on the primary key (<code>id</code>), eliminating insertion, update, and deletion anomalies.
+                </p>
+            </div>
+        </div>
+
+        <!-- 3. Primary & Foreign Keys Analysis -->
+        <div class="er-card">
+            <h2 style="margin-top: 0; font-size: 20px; margin-bottom: 15px;">Primary Keys, Foreign Keys, &amp; Integrity Constraints</h2>
+            <ul style="font-size: 14px; line-height: 1.7; padding-left: 20px; margin: 0;">
+                <li><strong>Synthetic Primary Keys:</strong> All tables employ <code>id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY</code> for efficient B-Tree indexing.</li>
+                <li><strong>Foreign Key Integrity:</strong> <code>student_id</code> and <code>event_id</code> enforce referential integrity with <code>ON DELETE CASCADE ON UPDATE CASCADE</code>, preventing orphan records.</li>
+                <li><strong>Duplicate Prevention:</strong> <code>UNIQUE KEY uq_student_event (student_id, event_id)</code> prevents accidental double bookings at the database engine level.</li>
+                <li><strong>Domain Check Constraints:</strong> <code>CHECK (semester BETWEEN 1 AND 8)</code> and <code>CHECK (max_seats &gt; 0)</code> ensure data integrity.</li>
+            </ul>
+        </div>
+
+        <!-- Quick Nav -->
+        <div style="text-align: center; margin-top: 25px;">
+            <a href="test_connection.php" class="btn" style="display: inline-block; background: #0d6efd; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; margin: 5px;">
+                View System Status &rarr;
+            </a>
+            <a href="index.html" class="btn" style="display: inline-block; background: #6c757d; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; margin: 5px;">
+                Back to Home
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer style="margin-top: 50px; text-align: center; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; background: white;">
+        <p style="margin: 0; color: #666;">
+            StudentHub &bull; Academic Portal &bull; All Rights Reserved
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

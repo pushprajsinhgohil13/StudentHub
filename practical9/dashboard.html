@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+
+            <div class="logo">
+
+                <h2>StudentHub</h2>
+
+            </div>
+
+
+            <!-- Hamburger Menu -->
+
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="courses.html">Courses</a>
+
+                <a href="attendance.html">Attendance</a>
+
+                <a href="assignments.html">Assignments</a>
+
+                <a href="results.html">Results</a>
+
+                <a href="library.html">Library</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="profile.html">Profile</a>
+
+                <a href="login.html">Logout</a>
+
+            </nav>
+
+
+            <!-- Theme Switch -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= WELCOME ================= -->
+
+    <section class="hero">
+
+        <h1>
+            Welcome to Student Dashboard
+        </h1>
+
+        <h3>
+            Hello, Student 👋
+        </h3>
+
+        <p>
+            Manage all your academic activities from one place.
+        </p>
+
+        <br>
+
+        <!-- Modal Button -->
+
+        <button
+            class="modal-open"
+            type="button"
+        >
+            📢 View Important Updates
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= QUICK ACCESS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Quick Access
+        </h2>
+
+
+        <div class="dashboard-grid">
+
+
+            <!-- Courses -->
+
+            <div class="card">
+
+                <h3>📚 My Courses</h3>
+
+                <p>
+                    View enrolled subjects.
+                </p>
+
+                <a href="courses.html">
+
+                    <button type="button">
+                        Open
+                    </button>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Attendance -->
+
+            <div class="card">
+
+                <h3>📅 Attendance</h3>
+
+                <p>
+                    Check attendance percentage.
+                </p>
+
+                <a href="attendance.html">
+
+                    <button type="button">
+                        Open
+                    </button>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Assignments -->
+
+            <div class="card">
+
+                <h3>📝 Assignments</h3>
+
+                <p>
+                    View pending assignments.
+                </p>
+
+                <a href="assignments.html">
+
+                    <button type="button">
+                        Open
+                    </button>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Results -->
+
+            <div class="card">
+
+                <h3>📊 Results</h3>
+
+                <p>
+                    View marks and grades.
+                </p>
+
+                <a href="results.html">
+
+                    <button type="button">
+                        Open
+                    </button>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Library -->
+
+            <div class="card">
+
+                <h3>📖 Library</h3>
+
+                <p>
+                    Issued books and due dates.
+                </p>
+
+                <a href="library.html">
+
+                    <button type="button">
+                        Open
+                    </button>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Events -->
+
+            <div class="card">
+
+                <h3>🎉 Events</h3>
+
+                <p>
+                    Upcoming workshops and seminars.
+                </p>
+
+                <a href="events.html">
+
+                    <button type="button">
+                        Open
+                    </button>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ACADEMIC SUMMARY ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Academic Summary
+        </h2>
+
+
+        <table>
+
+            <tr>
+
+                <th>
+                    Category
+                </th>
+
+                <th>
+                    Status
+                </th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Current Semester
+                </td>
+
+                <td>
+                    Semester 2
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Courses Enrolled
+                </td>
+
+                <td>
+                    6
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Attendance
+                </td>
+
+                <td>
+                    89%
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Pending Assignments
+                </td>
+
+                <td>
+                    2
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    CGPA
+                </td>
+
+                <td>
+                    8.45
+                </td>
+
+            </tr>
+
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ================= NOTIFICATIONS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Latest Notifications
+        </h2>
+
+
+        <ul>
+
+            <li>
+                📢 Internal Exam starts from 15 August.
+            </li>
+
+            <li>
+                💻 Hackathon Registration closes tomorrow.
+            </li>
+
+            <li>
+                📚 Library books must be returned before Friday.
+            </li>
+
+            <li>
+                🎯 Placement Training begins next week.
+            </li>
+
+            <li>
+                🤖 AI Workshop registration is open.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ================= MODAL POPUP ================= -->
+
+    <div
+        class="modal"
+        id="studentModal"
+    >
+
+        <div class="modal-content">
+
+
+            <!-- Close Button -->
+
+            <button
+                class="modal-close"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                📢 Important Student Updates
+            </h2>
+
+
+            <br>
+
+
+            <h3>
+                📝 Internal Examination
+            </h3>
+
+            <p>
+                Internal examinations are scheduled soon.
+                Check your academic timetable for exact dates.
+            </p>
+
+
+            <br>
+
+
+            <h3>
+                💻 Hackathon
+            </h3>
+
+            <p>
+                Hackathon registration is currently open.
+                Register before the deadline.
+            </p>
+
+
+            <br>
+
+
+            <h3>
+                🤖 AI Workshop
+            </h3>
+
+            <p>
+                An AI workshop is available for students
+                interested in artificial intelligence and
+                emerging technologies.
+            </p>
+
+
+            <br>
+
+
+            <button
+                type="button"
+                onclick="document.getElementById('studentModal').classList.remove('show')"
+            >
+                Got it
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

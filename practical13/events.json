@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "AI and Machine Learning Workshop",
+        "category": "workshop",
+        "date": "2026-09-10",
+        "time": "10:00 AM",
+        "venue": "Seminar Hall",
+        "description": "Learn the fundamentals of Artificial Intelligence and Machine Learning."
+    },
+    {
+        "id": 2,
+        "title": "Web Development Seminar",
+        "category": "seminar",
+        "date": "2026-09-14",
+        "time": "2:00 PM",
+        "venue": "Computer Lab",
+        "description": "Explore modern frontend and backend web development technologies."
+    },
+    {
+        "id": 3,
+        "title": "University Hackathon",
+        "category": "hackathon",
+        "date": "2026-09-20",
+        "time": "9:00 AM",
+        "venue": "Innovation Lab",
+        "description": "Build innovative solutions and compete with other students."
+    }
+]

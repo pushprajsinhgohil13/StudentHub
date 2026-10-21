@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Home</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <!-- Exam Notification Popup -->
+
+<div id="examPopup" class="exam-popup">
+
+    <div class="exam-popup-content">
+
+        <button
+            id="closeExamPopup"
+            class="exam-close"
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="exam-icon">
+            🔔
+        </div>
+
+        <h2>
+            Exam Alert!
+        </h2>
+
+        <p>
+            Mid-semester exams start next week.
+        </p>
+
+        <p>
+            📅 Please check your exam schedule
+            and start your preparation.
+        </p>
+
+        <button
+            id="examOkButton"
+            type="button"
+        >
+            Got it
+        </button>
+
+    </div>
+
+</div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+                <h2>StudentHub</h2>
+            </div>
+
+
+            <!-- Hamburger -->
+
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="registration.html">Registration</a>
+
+                <a href="view_students.php">Students</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="view_events.php">Event Bookings</a>
+
+                <a href="stored_procedures.php">Registrations Lookup</a>
+
+                <a href="er_model.html">Database Model</a>
+
+                <a href="test_connection.php">System Status</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+            </nav>
+
+
+            <!-- Theme Switcher -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            Welcome to StudentHub Portal
+        </h1>
+
+        <p>
+
+            Your all-in-one academic portal for learning,
+            attendance, assignments, results and campus updates.
+
+        </p>
+
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc7laFl6gDbgFOkcrJxwFoKbE7GszSr4pyZR7LjQXv3FfxFOWS4bg_h6tm&amp;s=10"
+            alt="StudentHub"
+        >
+
+
+        <br>
+
+
+        <a href="login.html">
+
+            <button type="button">
+                Login Now
+            </button>
+
+        </a>
+
+    </section>
+
+
+
+    <!-- ================= CONTENT SLIDER ================= -->
+
+    <section>
+
+        <h2 align="center">
+            StudentHub Highlights
+        </h2>
+
+
+        <div class="slider">
+
+
+            <!-- Slide 1 -->
+
+            <div class="slide active">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+                    alt="Students studying"
+                >
+
+                <div class="slide-content">
+
+                    <h2>
+                        Learn Smarter
+                    </h2>
+
+                    <p>
+                        Access your courses, assignments
+                        and academic resources from one place.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Slide 2 -->
+
+            <div class="slide">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                    alt="Students using technology"
+                >
+
+                <div class="slide-content">
+
+                    <h2>
+                        Manage Your Academics
+                    </h2>
+
+                    <p>
+                        Track attendance, results and
+                        assignments easily.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Slide 3 -->
+
+            <div class="slide">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+                    alt="Campus activities"
+                >
+
+                <div class="slide-content">
+
+                    <h2>
+                        Stay Connected
+                    </h2>
+
+                    <p>
+                        Get the latest campus events,
+                        workshops and announcements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Previous -->
+
+            <button
+                class="slider-btn prev"
+                type="button"
+            >
+                ❮
+            </button>
+
+
+            <!-- Next -->
+
+            <button
+                class="slider-btn next"
+                type="button"
+            >
+                ❯
+            </button>
+
+        </div>
+
+
+
+        <!-- Slider Dots -->
+
+        <div class="slider-dots">
+
+            <span
+                class="dot active"
+            ></span>
+
+            <span
+                class="dot"
+            ></span>
+
+            <span
+                class="dot"
+            ></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Portal Features
+        </h2>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <h3>📚 Courses</h3>
+
+                <p>
+                    Access all enrolled courses.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>📅 Attendance</h3>
+
+                <p>
+                    Track attendance percentage.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>📝 Assignments</h3>
+
+                <p>
+                    Submit and view assignments.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>📊 Results</h3>
+
+                <p>
+                    View semester grades.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>📖 Library</h3>
+
+                <p>
+                    Search and issue books.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🎉 Events</h3>
+
+                <p>
+                    Stay updated with campus activities.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ANNOUNCEMENTS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Latest Announcements
+        </h2>
+
+
+        <ul>
+
+            <li>
+                Mid Semester Exams begin next month.
+            </li>
+
+            <li>
+                AI Workshop registration is now open.
+            </li>
+
+            <li>
+                Library remains open until 8 PM.
+            </li>
+
+            <li>
+                Placement Training starts next Monday.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal |
+            Developed by Pushprajsinh
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
