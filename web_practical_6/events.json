@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "title": "AI & Machine Learning Workshop",
+        "category": "workshop",
+        "date": "2026-09-10",
+        "time": "10:00 AM",
+        "venue": "Seminar Hall A",
+        "description": "Hands-on workshop covering neural networks, deep learning fundamentals, and practical Python implementations.",
+        "speaker": "Dr. Sarah Jenkins",
+        "seats": 50
+    },
+    {
+        "id": 2,
+        "title": "Modern Web Development Seminar",
+        "category": "seminar",
+        "date": "2026-09-14",
+        "time": "02:00 PM",
+        "venue": "Computer Lab 3",
+        "description": "Explore the latest in modern frontend frameworks, RESTful APIs, asynchronous JavaScript, and cloud deployment.",
+        "speaker": "Prof. Alex Rivera",
+        "seats": 80
+    },
+    {
+        "id": 3,
+        "title": "Annual University Hackathon 2026",
+        "category": "hackathon",
+        "date": "2026-09-20",
+        "time": "09:00 AM",
+        "venue": "Innovation Hub",
+        "description": "A 24-hour coding challenge to build innovative software solutions solving real-world campus and social problems.",
+        "speaker": "Tech Council",
+        "seats": 120
+    },
+    {
+        "id": 4,
+        "title": "Campus Cultural Fest & Music Night",
+        "category": "cultural",
+        "date": "2026-09-25",
+        "time": "06:00 PM",
+        "venue": "Open Air Amphitheatre",
+        "description": "An evening of vibrant musical performances, dance choreography, drama skits, and cultural art exhibitions.",
+        "speaker": "Student Affairs Committee",
+        "seats": 300
+    },
+    {
+        "id": 5,
+        "title": "Cybersecurity & Ethical Hacking Bootcamp",
+        "category": "workshop",
+        "date": "2026-10-02",
+        "time": "11:00 AM",
+        "venue": "Cyber Security Lab",
+        "description": "Learn network vulnerability analysis, web security protocols, threat detection, and defensive programming techniques.",
+        "speaker": "Mr. Rahul Sharma",
+        "seats": 40
+    },
+    {
+        "id": 6,
+        "title": "Cloud Computing & DevOps Seminar",
+        "category": "seminar",
+        "date": "2026-10-08",
+        "time": "03:30 PM",
+        "venue": "Auditorium 2",
+        "description": "Understanding containerization with Docker, CI/CD pipelines, Kubernetes orchestration, and AWS architecture.",
+        "speaker": "Ms. Priya Patel",
+        "seats": 90
+    },
+    {
+        "id": 7,
+        "title": "CodeSprint Rapid Algorithmic Hackathon",
+        "category": "hackathon",
+        "date": "2026-10-15",
+        "time": "10:00 AM",
+        "venue": "Main Computer Centre",
+        "description": "Speed algorithmic coding sprint focusing on data structures, competitive programming, and problem-solving puzzles.",
+        "speaker": "Coding Club",
+        "seats": 60
+    },
+    {
+        "id": 8,
+        "title": "Inter-College Drama & Arts Showcase",
+        "category": "cultural",
+        "date": "2026-10-22",
+        "time": "05:00 PM",
+        "venue": "Central Auditorium",
+        "description": "Spectacular theatrical performances and student art exhibitions from colleges across the region.",
+        "speaker": "Cultural Committee",
+        "seats": 250
+    }
+]

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+                <h2>🎓 StudentHub</h2>
+            </div>
+
+
+            <!-- Hamburger -->
+
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+                <a href="courses.html">Courses</a>
+
+                <a href="attendance.html">Attendance</a>
+
+                <a href="assignments.html">Assignments</a>
+
+                <a href="results.html">Results</a>
+
+                <a href="library.html">Library</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="profile.html">Profile</a>
+
+            </nav>
+
+
+            <!-- Theme -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            👤 My Profile
+        </h1>
+
+        <p>
+            View and manage your student information.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= PROFILE ================= -->
+
+    <section>
+
+        <div class="card"
+             style="max-width:700px; margin:auto; text-align:center;">
+
+
+            <!-- Profile Avatar -->
+
+            <div
+                id="profileAvatar"
+                style="font-size:70px;"
+            >
+                👨‍🎓
+            </div>
+
+
+            <h2 id="displayName">
+                Student Name
+            </h2>
+
+
+            <p id="displayEmail">
+                student@example.com
+            </p>
+
+
+            <hr>
+
+
+            <div style="text-align:left;">
+
+                <p>
+                    <strong>Student ID:</strong>
+
+                    <span id="displayId">
+                        STU2026001
+                    </span>
+                </p>
+
+
+                <p>
+                    <strong>Department:</strong>
+
+                    <span id="displayDepartment">
+                        Computer Science & Engineering
+                    </span>
+                </p>
+
+
+                <p>
+                    <strong>Semester:</strong>
+
+                    <span id="displaySemester">
+                        Semester 3
+                    </span>
+                </p>
+
+
+                <p>
+                    <strong>Phone:</strong>
+
+                    <span id="displayPhone">
+                        +91 XXXXX XXXXX
+                    </span>
+                </p>
+
+
+                <p>
+                    <strong>City:</strong>
+
+                    <span id="displayCity">
+                        Ahmedabad
+                    </span>
+                </p>
+
+            </div>
+
+
+            <br>
+
+
+            <button
+                id="editProfileButton"
+                type="button"
+            >
+                ✏️ Edit Profile
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PROFILE STATS ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Academic Overview
+        </h2>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <h3>
+                    Attendance
+                </h3>
+
+                <h1>
+                    89%
+                </h1>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    SGPA
+                </h3>
+
+                <h1>
+                    8.72
+                </h1>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Courses
+                </h3>
+
+                <h1>
+                    6
+                </h1>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EDIT PROFILE MODAL ================= -->
+
+    <div
+        class="modal"
+        id="profileModal"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                class="modal-close"
+                id="profileModalClose"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                ✏️ Edit Profile
+            </h2>
+
+
+            <br>
+
+
+            <form id="profileForm">
+
+
+                <div class="form-group">
+
+                    <label for="nameInput">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nameInput"
+                        required
+                    >
+
+                </div>
+
+
+                <br>
+
+
+                <div class="form-group">
+
+                    <label for="emailInput">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="emailInput"
+                        required
+                    >
+
+                </div>
+
+
+                <br>
+
+
+                <div class="form-group">
+
+                    <label for="phoneInput">
+                        Phone
+                    </label>
+
+                    <input
+                        type="text"
+                        id="phoneInput"
+                        placeholder="Enter phone number"
+                    >
+
+                </div>
+
+
+                <br>
+
+
+                <div class="form-group">
+
+                    <label for="cityInput">
+                        City
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Enter city"
+                    >
+
+                </div>
+
+
+                <br>
+
+
+                <button
+                    type="submit"
+                >
+                    Save Changes
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelProfile"
+                >
+                    Cancel
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= MAIN JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- ================= PROFILE JAVASCRIPT ================= -->
+
+    <script>
+
+        /* =========================================
+           ELEMENTS
+        ========================================= */
+
+        const editProfileButton =
+            document.getElementById(
+                "editProfileButton"
+            );
+
+
+        const profileModal =
+            document.getElementById(
+                "profileModal"
+            );
+
+
+        const profileModalClose =
+            document.getElementById(
+                "profileModalClose"
+            );
+
+
+        const cancelProfile =
+            document.getElementById(
+                "cancelProfile"
+            );
+
+
+        const profileForm =
+            document.getElementById(
+                "profileForm"
+            );
+
+
+        const nameInput =
+            document.getElementById(
+                "nameInput"
+            );
+
+
+        const emailInput =
+            document.getElementById(
+                "emailInput"
+            );
+
+
+        const phoneInput =
+            document.getElementById(
+                "phoneInput"
+            );
+
+
+        const cityInput =
+            document.getElementById(
+                "cityInput"
+            );
+
+
+        const displayName =
+            document.getElementById(
+                "displayName"
+            );
+
+
+        const displayEmail =
+            document.getElementById(
+                "displayEmail"
+            );
+
+
+        const displayPhone =
+            document.getElementById(
+                "displayPhone"
+            );
+
+
+        const displayCity =
+            document.getElementById(
+                "displayCity"
+            );
+
+
+
+        /* =========================================
+           OPEN MODAL
+        ========================================= */
+
+        editProfileButton.addEventListener(
+            "click",
+            function() {
+
+                /*
+                    Put current values into form
+                */
+
+                nameInput.value =
+                    displayName.textContent.trim();
+
+
+                emailInput.value =
+                    displayEmail.textContent.trim();
+
+
+                phoneInput.value =
+                    displayPhone.textContent.trim();
+
+
+                cityInput.value =
+                    displayCity.textContent.trim();
+
+
+                profileModal.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* =========================================
+           CLOSE MODAL
+        ========================================= */
+
+        function closeProfileModal() {
+
+            profileModal.classList.remove(
+                "show"
+            );
+
+        }
+
+
+        profileModalClose.addEventListener(
+            "click",
+            closeProfileModal
+        );
+
+
+        cancelProfile.addEventListener(
+            "click",
+            closeProfileModal
+        );
+
+
+        profileModal.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    event.target === profileModal
+                ) {
+
+                    closeProfileModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           SAVE PROFILE
+        ========================================= */
+
+        profileForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const newName =
+                    nameInput.value.trim();
+
+
+                const newEmail =
+                    emailInput.value.trim();
+
+
+                const newPhone =
+                    phoneInput.value.trim();
+
+
+                const newCity =
+                    cityInput.value.trim();
+
+
+                if (
+                    newName === "" ||
+                    newEmail === ""
+                ) {
+
+                    showNotification(
+                        "Name and email are required.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                /*
+                    Update profile
+                */
+
+                displayName.textContent =
+                    newName;
+
+
+                displayEmail.textContent =
+                    newEmail;
+
+
+                displayPhone.textContent =
+                    newPhone || "Not provided";
+
+
+                displayCity.textContent =
+                    newCity || "Not provided";
+
+
+                /*
+                    Close modal
+                */
+
+                closeProfileModal();
+
+
+                /*
+                    Notification
+                */
+
+                showNotification(
+                    "Profile updated successfully.",
+                    "success"
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

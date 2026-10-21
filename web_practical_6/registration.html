@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo">
+                <h2>🎓 StudentHub</h2>
+            </div>
+
+
+            <button class="hamburger" id="hamburgerBtn" type="button">
+                ☰
+            </button>
+
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="login.html">Login</a>
+
+                <a href="registration.html">
+                    Registration
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+            </nav>
+
+
+            <button class="theme-btn" id="themeToggle" type="button">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= REGISTRATION ================= -->
+
+    <main>
+
+        <section>
+
+            <div class="card registration-card">
+
+                <h1>
+                    Student Registration
+                </h1>
+
+                <p>
+                    Create your StudentHub account.
+                </p>
+
+
+                <br>
+
+
+                <form id="registrationForm" action="process.php" method="POST" novalidate>
+
+
+                    <!-- ================= NAME ================= -->
+
+                    <div class="form-group">
+
+                        <label for="studentName">
+                            Full Name
+                        </label>
+
+                        <input type="text" id="studentName" name="studentName" placeholder="Enter your full name"
+                            autocomplete="name">
+
+                        <small class="form-error" id="nameError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= EMAIL ================= -->
+
+                    <div class="form-group">
+
+                        <label for="studentEmail">
+                            Email
+                        </label>
+
+                        <input type="email" id="studentEmail" name="studentEmail" placeholder="example@gmail.com"
+                            autocomplete="email">
+
+                        <small class="form-error" id="emailError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= MOBILE ================= -->
+
+                    <div class="form-group">
+
+                        <label for="studentMobile">
+                            Mobile Number
+                        </label>
+
+                        <input type="tel" id="studentMobile" name="studentMobile"
+                            placeholder="Enter 10 digit mobile number" maxlength="10" autocomplete="tel">
+
+                        <small class="form-error" id="mobileError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= PASSWORD ================= -->
+
+                    <div class="form-group">
+
+                        <label for="studentPassword">
+                            Password
+                        </label>
+
+                        <input type="password" id="studentPassword" name="studentPassword" placeholder="Enter password"
+                            autocomplete="new-password">
+
+                        <small class="form-error" id="passwordError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= CONFIRM PASSWORD ================= -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Re-enter password" autocomplete="new-password">
+
+                        <small class="form-error" id="confirmPasswordError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= COURSE ================= -->
+
+                    <div class="form-group">
+
+                        <label for="course">
+                            Course
+                        </label>
+
+                        <select id="course" name="course">
+
+                            <option value="">
+                                Select Course
+                            </option>
+
+                            <option value="CSE">
+                                Computer Science Engineering
+                            </option>
+
+                            <option value="AIML">
+                                Artificial Intelligence & ML
+                            </option>
+
+                            <option value="IT">
+                                Information Technology
+                            </option>
+
+                            <option value="ECE">
+                                Electronics & Communication
+                            </option>
+
+                        </select>
+
+
+                        <small class="form-error" id="courseError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= YEAR ================= -->
+
+                    <div class="form-group">
+
+                        <label for="year">
+                            Year
+                        </label>
+
+                        <select id="year" name="year">
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option value="1">
+                                First Year
+                            </option>
+
+                            <option value="2">
+                                Second Year
+                            </option>
+
+                            <option value="3">
+                                Third Year
+                            </option>
+
+                            <option value="4">
+                                Fourth Year
+                            </option>
+
+                        </select>
+
+
+                        <small class="form-error" id="yearError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= GENDER ================= -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Gender
+                        </label>
+
+
+                        <div class="gender-options">
+
+                            <label>
+
+                                <input type="radio" name="gender" value="Male">
+
+                                Male
+
+                            </label>
+
+
+                            <label>
+
+                                <input type="radio" name="gender" value="Female">
+
+                                Female
+
+                            </label>
+
+
+                            <label>
+
+                                <input type="radio" name="gender" value="Other">
+
+                                Other
+
+                            </label>
+
+                        </div>
+
+
+                        <small class="form-error" id="genderError"></small>
+
+                    </div>
+
+
+
+                    <!-- ================= TERMS ================= -->
+
+                    <div class="form-group">
+
+                        <label class="terms-label">
+
+                            <input type="checkbox" id="terms" name="terms">
+
+                            I agree to the Terms &
+                            Conditions.
+
+                        </label>
+
+
+                        <small class="form-error" id="termsError"></small>
+
+                    </div>
+
+
+
+                    <br>
+
+
+
+                    <!-- ================= BUTTONS ================= -->
+
+                    <button type="submit">
+                        Register
+                    </button>
+
+
+                    <button type="reset" id="registrationReset">
+                        Clear
+                    </button>
+
+
+                    <!-- SUCCESS MESSAGE -->
+
+                    <div id="registrationSuccess" class="registration-success"></div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

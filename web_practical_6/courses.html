@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Courses</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-container">
+
+
+            <div class="logo">
+
+                <h2>🎓 StudentHub</h2>
+
+            </div>
+
+
+            <!-- Hamburger Menu -->
+
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="courses.html">
+                    Courses
+                </a>
+
+                <a href="attendance.html">
+                    Attendance
+                </a>
+
+                <a href="assignments.html">
+                    Assignments
+                </a>
+
+                <a href="results.html">
+                    Results
+                </a>
+
+                <a href="library.html">
+                    Library
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </nav>
+
+
+            <!-- Theme Switcher -->
+
+            <button
+                class="theme-btn"
+                id="themeToggle"
+                type="button"
+            >
+                🌙 Dark Mode
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        id="notification"
+        class="notification"
+    >
+
+        <span id="notificationMessage"></span>
+
+        <button
+            id="closeNotification"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            My Courses
+        </h1>
+
+        <p>
+            View all enrolled courses for the current semester.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= COURSE CARDS ================= -->
+
+    <section>
+
+        <div class="grid">
+
+
+            <!-- Course 1 -->
+
+            <div class="card">
+
+                <h3>
+                    CSE201
+                </h3>
+
+                <h4>
+                    Data Structures
+                </h4>
+
+                <p>
+                    Faculty : Dr. R. Patel
+                </p>
+
+                <p>
+                    Credits : 4
+                </p>
+
+                <button
+                    class="course-details"
+                    data-course="Data Structures"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+
+            <!-- Course 2 -->
+
+            <div class="card">
+
+                <h3>
+                    CSE202
+                </h3>
+
+                <h4>
+                    Object Oriented Programming
+                </h4>
+
+                <p>
+                    Faculty : Prof. S. Shah
+                </p>
+
+                <p>
+                    Credits : 4
+                </p>
+
+                <button
+                    class="course-details"
+                    data-course="Object Oriented Programming"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+
+            <!-- Course 3 -->
+
+            <div class="card">
+
+                <h3>
+                    CSE203
+                </h3>
+
+                <h4>
+                    Database Management System
+                </h4>
+
+                <p>
+                    Faculty : Prof. P. Mehta
+                </p>
+
+                <p>
+                    Credits : 4
+                </p>
+
+                <button
+                    class="course-details"
+                    data-course="Database Management System"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+
+            <!-- Course 4 -->
+
+            <div class="card">
+
+                <h3>
+                    CSE204
+                </h3>
+
+                <h4>
+                    Computer Networks
+                </h4>
+
+                <p>
+                    Faculty : Dr. K. Patel
+                </p>
+
+                <p>
+                    Credits : 3
+                </p>
+
+                <button
+                    class="course-details"
+                    data-course="Computer Networks"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+
+            <!-- Course 5 -->
+
+            <div class="card">
+
+                <h3>
+                    CSE205
+                </h3>
+
+                <h4>
+                    Web Development
+                </h4>
+
+                <p>
+                    Faculty : Prof. H. Joshi
+                </p>
+
+                <p>
+                    Credits : 3
+                </p>
+
+                <button
+                    class="course-details"
+                    data-course="Web Development"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+
+            <!-- Course 6 -->
+
+            <div class="card">
+
+                <h3>
+                    CSE206
+                </h3>
+
+                <h4>
+                    Mathematics-II
+                </h4>
+
+                <p>
+                    Faculty : Dr. A. Shah
+                </p>
+
+                <p>
+                    Credits : 4
+                </p>
+
+                <button
+                    class="course-details"
+                    data-course="Mathematics-II"
+                    type="button"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= COURSE SUMMARY ================= -->
+
+    <section>
+
+        <h2 align="center">
+            Course Summary
+        </h2>
+
+
+        <table>
+
+            <tr>
+
+                <th>
+                    Total Courses
+                </th>
+
+                <th>
+                    Total Credits
+                </th>
+
+                <th>
+                    Semester
+                </th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    6
+                </td>
+
+                <td>
+                    22
+                </td>
+
+                <td>
+                    Semester 2
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ================= COURSE MODAL ================= -->
+
+    <div
+        class="modal"
+        id="courseModal"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                class="modal-close"
+                id="courseModalClose"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h2 id="courseModalTitle">
+                Course Details
+            </h2>
+
+
+            <br>
+
+
+            <p id="courseModalText">
+                Course information will appear here.
+            </p>
+
+
+            <br>
+
+
+            <button
+                type="button"
+                id="courseModalDone"
+            >
+                Close
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+
+    <!-- Course Details JavaScript -->
+
+    <script>
+
+        const courseButtons =
+            document.querySelectorAll(".course-details");
+
+        const courseModal =
+            document.getElementById("courseModal");
+
+        const courseModalTitle =
+            document.getElementById("courseModalTitle");
+
+        const courseModalText =
+            document.getElementById("courseModalText");
+
+        const courseModalClose =
+            document.getElementById("courseModalClose");
+
+        const courseModalDone =
+            document.getElementById("courseModalDone");
+
+
+        courseButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const courseName =
+                    button.getAttribute("data-course");
+
+
+                courseModalTitle.textContent =
+                    courseName;
+
+
+                courseModalText.textContent =
+                    "You selected " +
+                    courseName +
+                    ". Course details, syllabus, faculty information and academic resources can be accessed from this section.";
+
+
+                courseModal.classList.add("show");
+
+            });
+
+        });
+
+
+        function closeCourseModal() {
+
+            courseModal.classList.remove("show");
+
+        }
+
+
+        courseModalClose.addEventListener(
+            "click",
+            closeCourseModal
+        );
+
+
+        courseModalDone.addEventListener(
+            "click",
+            closeCourseModal
+        );
+
+
+        courseModal.addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target === courseModal) {
+
+                    closeCourseModal();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
